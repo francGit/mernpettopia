@@ -1,0 +1,650 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500;700;900&family=Nunito:wght@500;600;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+body {
+  font-family: "Maven Pro", sans-serif;
+}
+
+.h60 {
+  min-height: 84vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: inherit;
+  opacity: 0.9;
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.boxForm {
+  min-width: 60%;
+}
+
+hr {
+  background-color: #1947BA;
+}
+
+header {
+  display: block;
+  background: #EAF2F9;
+}
+header .boxLogo {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.6rem;
+}
+header .boxLogo figure {
+  margin: 0;
+  width: 160px;
+}
+header .boxNav {
+  width: 100%;
+}
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .container .navbar {
+  background-color: transparent !important;
+}
+header .boxLog {
+  min-width: 26%;
+}
+header .boxLog ul {
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 20px;
+  margin: 0;
+}
+header .boxLog ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+header .boxLog ul li a i {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 100%;
+  -webkit-box-shadow: 2px 5px 55px -30px rgba(0, 0, 0, 0.88);
+  box-shadow: 2px 5px 55px -30px rgba(0, 0, 0, 0.88);
+}
+header .boxLog ul li a i img {
+  width: 40px;
+}
+header .boxLog ul li a span {
+  background: #FC637D;
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 20px;
+  position: relative;
+  left: -12px;
+  font-weight: 800;
+}
+header .boxLog ul li:nth-child(1) img {
+  width: 19px;
+}
+header .boxLog ul li:nth-child(2) i {
+  position: relative;
+  z-index: 2;
+  padding: 1.08rem 0.5rem;
+}
+
+.dataUserDash {
+  padding: 0rem 2rem;
+}
+
+.menu {
+  gap: 20px;
+  min-width: 40%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero {
+  min-height: 60vh;
+}
+.hero h1 {
+  font-family: "Nunito", sans-serif;
+  color: #1947BA;
+  font-size: 4.6rem;
+  line-height: 1;
+}
+.hero h1 strong {
+  font-weight: 900;
+  color: #FC637D;
+}
+.hero p {
+  color: #FC637D;
+  font-size: 1.4rem;
+}
+.hero .col-md-7 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 60vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section {
+  min-height: calc(100vh - 180px);
+}
+section .SubTitle {
+  font-family: "Nunito", sans-serif;
+  color: #1947BA;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-top: 3rem;
+  text-align: center;
+}
+section .leadText {
+  margin-top: 4rem;
+  font-size: 2rem;
+  line-height: 1;
+  color: #FC637D;
+}
+
+.servicios {
+  background: #EAF2F9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.equipo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-height: 80vh;
+  padding-top: 4vh;
+}
+.equipo .listaEquipo {
+  list-style: none;
+}
+.equipo .listaEquipo li {
+  font-size: 2rem;
+  color: #FC637D;
+}
+.equipo .listaEquipo li img {
+  width: 30px;
+}
+.equipo .extraTitulo {
+  font-family: "Nunito", sans-serif;
+  color: #0A083A;
+  font-weight: 900;
+  text-align: center;
+  font-size: 3rem;
+}
+.equipo h2 {
+  text-align: left;
+}
+
+.boxLogin {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.boxForm {
+  min-height: 60vh;
+}
+.boxForm .SubTitle {
+  font-size: 2.4rem;
+  margin-top: 4rem;
+}
+
+.boxRegPeludo {
+  width: 100%;
+  min-height: 20vh;
+  background: #EAF2F9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+.boxRegPeludo p {
+  color: #1947BA;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.4rem;
+  padding: 0 2rem;
+  font-weight: 800;
+}
+.boxRegPeludo p span {
+  font-weight: 900;
+  color: #FC637D;
+}
+.boxRegPeludo .cat1 {
+  width: 120px;
+}
+.boxRegPeludo .cat1 figure img {
+  display: block;
+  width: 80px;
+  margin: auto;
+}
+.boxRegPeludo .dog1 {
+  width: 120px;
+}
+.boxRegPeludo .dog1 figure img {
+  display: block;
+  width: 80px;
+  margin: auto;
+}
+
+.leftBox {
+  background: #FEFAF2;
+  position: relative;
+  overflow: hidden;
+}
+.leftBox .hoja1 {
+  width: 120px;
+  height: 160px;
+  background: url(/image/hojas1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.leftBox .hoja2 {
+  width: 120px;
+  height: 200px;
+  background: url(/image/hojas2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  position: absolute;
+  left: -10px;
+  top: -100px;
+}
+
+.form-control {
+  border: 0;
+  border-bottom: 1px solid #EAF2F9;
+  border-radius: 0;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #FC637D !important;
+}
+.form-control::-webkit-input-placeholder {
+  color: #ceced8;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form-control::-moz-placeholder {
+  color: #ceced8;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form-control:-ms-input-placeholder {
+  color: #ceced8;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form-control::-ms-input-placeholder {
+  color: #ceced8;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form-control::placeholder {
+  color: #ceced8;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form-controltextarea {
+  padding-top: 60px;
+}
+
+.form-select {
+  border: 0;
+  border-bottom: 1px solid #EAF2F9;
+  border-radius: 0;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #FC637D !important;
+}
+.form-select::-webkit-input-placeholder {
+  color: #ceced8;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form-select::-moz-placeholder {
+  color: #ceced8;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form-select:-ms-input-placeholder {
+  color: #ceced8;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form-select::-ms-input-placeholder {
+  color: #ceced8;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.form-select::placeholder {
+  color: #ceced8;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.btn {
+  background: #FC637D;
+  border: 0;
+  border-radius: 30px;
+  min-width: 180px;
+}
+
+.regLeft {
+  background: #F2F7FB;
+}
+
+.logUser {
+  color: #FC637D;
+}
+
+.btn-file {
+  color: #fff;
+}
+
+.boxProfile {
+  background: #F2F7FB;
+  border-radius: 20px;
+}
+.boxProfile .boxImgProfile {
+  padding: 0.6rem;
+}
+.boxProfile .boxImgProfile img {
+  display: block;
+  width: 100%;
+  border-radius: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: center;
+     object-position: center;
+}
+.boxProfile .boxUserNameDash {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.boxProfile h2 {
+  margin: 0;
+  color: #1947BA;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+.boxProfile hr {
+  margin: 0;
+}
+.boxProfile ul {
+  color: #052167;
+}
+.boxProfile ul li b {
+  color: #FC637D;
+}
+
+.boxHistorialServicios {
+  border-radius: 20px;
+  border: 1px solid #F2F7FB;
+}
+
+.boxDateToday {
+  margin-top: 1rem;
+  background: #FC637D;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.nextBoxDate {
+  background: #fff;
+}
+
+.btn-info {
+  color: #fff;
+  text-decoration: none;
+}
+
+.arrowSlide1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+.arrowSlide1 li {
+  cursor: pointer;
+}
+.arrowSlide1 li img {
+  background: transparent !important;
+}
+
+.sliderServicios {
+  margin-top: 3rem;
+}
+.sliderServicios .itemServicio .boxItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sliderServicios .itemServicio .boxItem .boxIcon {
+  background: #fff;
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+  -webkit-box-shadow: 10px 28px 33px -31px rgba(0, 0, 0, 0.51);
+  box-shadow: 10px 28px 33px -31px rgba(0, 0, 0, 0.51);
+}
+.sliderServicios .itemServicio .boxItem .boxIcon figure {
+  margin: 0;
+  padding: 2rem;
+}
+.sliderServicios .itemServicio .boxItem .boxTexto {
+  text-align: center;
+}
+.sliderServicios .itemServicio .boxItem .boxTexto h2 {
+  font-family: "Nunito", sans-serif;
+  color: #1947BA;
+  font-weight: 900;
+}
+
+.slick-arrow {
+  z-index: 9;
+  background: #FC637D !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.slick-arrow::before {
+  display: none;
+}
+.slick-arrow img {
+  width: 20px;
+}
+
+.btnclose {
+  border: 0;
+  background: #fff;
+  padding: 0;
+  width: 46px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+}
+
+.modal-content {
+  background: #1947BA;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.modal-title {
+  width: 100%;
+  padding-top: 10px;
+  text-align: center;
+  display: block !important;
+  font-family: "Nunito", sans-serif;
+  color: #FC637D;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.modal-header, .modal-footer {
+  border: 0;
+  position: relative;
+}
+
+.lobo {
+  max-width: 70px;
+  display: block;
+  margin: 2rem auto 1rem;
+}
+.lobo img {
+  display: block;
+  width: 100%;
+}
+
+.pareja {
+  max-width: 120px;
+  display: block;
+  margin: 2rem auto 1rem;
+}
+.pareja img {
+  display: block;
+  width: 100%;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.boxWhite {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 20px;
+  max-width: 80%;
+  margin: auto;
+}
+.boxWhite ul {
+  padding: 0;
+  text-align: center;
+  list-style: none;
+}
+.boxWhite ul li {
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  color: #0A083A;
+}
+.boxWhite ul li strong {
+  color: #FC637D;
+}
+
+footer {
+  padding: 2rem;
+  background: #0A083A;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #F2F7FB;
+}
