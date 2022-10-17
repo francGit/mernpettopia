@@ -1,0 +1,142 @@
+.arrowSlide1{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    
+    & li{
+        cursor: pointer;
+        & img{
+            background: transparent !important;
+        }
+    }
+}
+.sliderServicios{
+    margin-top: 3rem;
+    & .itemServicio{
+        & .boxItem{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .boxIcon{
+                background: $blanco;
+                width: 160px;
+                height: 160px;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+                margin-bottom: 1rem;
+                -webkit-box-shadow: 10px 28px 33px -31px rgba(0,0,0,0.51);
+-moz-box-shadow: 10px 28px 33px -31px rgba(0,0,0,0.51);
+box-shadow: 10px 28px 33px -31px rgba(0,0,0,0.51);
+                & figure{
+                    margin: 0;
+                    padding: 2rem;
+
+                }
+            }
+
+            .boxTexto{
+                text-align: center;
+                & h2{
+                    font-family: 'Nunito', sans-serif;
+                color: $azul;
+                font-weight: 900;
+                }
+            }
+        }
+    }
+}
+.slick-arrow{
+    z-index: 9;
+    &::before{
+        display: none;
+    }
+    background:$rosa !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img{
+        width: 20px;
+    }
+}
+
+.btnclose{
+    border: 0;
+    background: $blanco;
+    padding: 0;
+    width: 46px;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+}
+.modal-content{
+    background: $azul;
+    color: $blanco;
+    border-radius: 20px;
+   
+}
+
+.modal-title{
+    width: 100%;
+    padding-top: 10px;
+    text-align: center;
+    display: block !important;
+    font-family: 'Nunito', sans-serif;
+    color: $rosa;
+    font-weight: 900;
+    font-size: 2rem;
+}
+.modal-header, .modal-footer{
+    border: 0;
+    position: relative;
+}
+
+.lobo{
+    max-width: 70px;
+    display: block;
+    margin:2rem auto 1rem;
+    & img{
+        display: block;
+        width: 100%;
+    }
+}
+.pareja{
+    max-width: 120px;
+    display: block;
+    margin:2rem auto 1rem;
+    & img{
+        display: block;
+        width: 100%;
+    }
+}
+.modal-body{
+    text-align: center;
+}
+.boxWhite{
+    background: $blanco;
+    padding: 1rem;
+    border-radius: 20px;
+    max-width: 80%;
+    margin: auto;
+    & ul{
+        padding: 0;
+        text-align: center;
+        list-style: none;
+        & li{
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            color: $azul2;
+            & strong{
+                color: $rosa;
+            }
+        }
+    }
+}
