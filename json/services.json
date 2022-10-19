@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "634f5a1e5f712b2ada5c45f7"
+  },
+  "nameService": "Baño y peluquería"
+},{
+  "_id": {
+    "$oid": "634f5ab55f712b2ada5c45f8"
+  },
+  "nameService": "Vacunación"
+},{
+  "_id": {
+    "$oid": "634f5abe5f712b2ada5c45f9"
+  },
+  "nameService": "Profilaxis"
+},{
+  "_id": {
+    "$oid": "634f5acf5f712b2ada5c45fa"
+  },
+  "nameService": "Urgencias"
+},{
+  "_id": {
+    "$oid": "634f5adb5f712b2ada5c45fb"
+  },
+  "nameService": "Consulta general"
+},{
+  "_id": {
+    "$oid": "634f5ae85f712b2ada5c45fc"
+  },
+  "nameService": "Tratamientos de heridas"
+},{
+  "_id": {
+    "$oid": "634f5b475f712b2ada5c45fd"
+  },
+  "nameService": "Cuidador"
+}]

@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "634f564c5f712b2ada5c45d6"
+  },
+  "name": "Juan Carlos Rozo",
+  "cc": "3492773554",
+  "telefono": "3123",
+  "email": "corre@gmail.com",
+  "address": "call 50 #30-3 norte",
+  "country": "Colombia",
+  "city": "Bogota",
+  "state": "activo"
+},{
+  "_id": {
+    "$oid": "634f573a5f712b2ada5c45e2"
+  },
+  "name": "Andres silva",
+  "cc": "3492773554",
+  "telefono": "3123",
+  "email": "corre@gmail.com",
+  "address": "call 50 #30-3 norte",
+  "country": "Colombia",
+  "city": "Bogota",
+  "state": "activo"
+},{
+  "_id": {
+    "$oid": "634f57545f712b2ada5c45e3"
+  },
+  "name": "Oscar Lopez",
+  "cc": "3492773554",
+  "telefono": "3123",
+  "email": "corre@gmail.com",
+  "address": "call 50 #30-3 norte",
+  "country": "Colombia",
+  "city": "Bogota",
+  "state": "activo"
+}]

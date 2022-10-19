@@ -1,7 +1,7 @@
-let name = 'Juliana Garzon',
+let user = 'Juliana Garzon',
     pet = 'Rufus',
-  pass = "password",
-  modal = `
+    pass = "password",
+    modal = `
   <div class="modal fade" id="mdGeneral" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -33,16 +33,16 @@ let header = `
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <span class="dataUserDash">Bienven@ a PetTopia: <b class="logUser">${name}</b> <i><img src="image/Edit.svg" class="img-fluid" alt=""></i></span>
+        <span class="dataUserDash">Bienven@ a PetTopia: <b class="logUser">${user}</b> <i><img src="image/Edit.svg" class="img-fluid" alt=""></i></span>
         <ul class="navbar-nav menu">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/#inicio">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="./#inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#servicios">Servicios</a>
+            <a class="nav-link" href="./#servicios">Servicios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#equipo">Equipo</a>
+            <a class="nav-link" href="./#equipo">Equipo</a>
           </li>
         </ul>
         <div class="boxLog">
@@ -139,7 +139,7 @@ $("#login").on("click", () => {
     $("#mdGeneral").modal("show");
     $(".modal-title").html("Acceso concedido");
     $(".modal-body").html(`
-        <p class="d-block text-center">Click en continuar</p>
+        <a href="dashboard.html" class="btn btn-info">Continuar</a>
     `);
 });
 
@@ -173,7 +173,7 @@ $("#detalle").on("click", () => {
 });
 
 
-//////(metodos)
+//////(metodos menu)
 if ($('body').hasClass('iniContent') || $('body').hasClass('loginContent') || $('body').hasClass('registroContent')  ) {
     $('.dataUserDash').hide();
     $('.btnexit').hide();
