@@ -456,21 +456,89 @@ section .leadText {
   border-radius: 20px;
   border: 1px solid #F2F7FB;
 }
+.boxHistorialServicios .titleHistorial b {
+  color: #FC637D;
+}
 
 .boxDateToday {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 1rem;
   background: #FC637D;
   border-radius: 20px;
   color: #fff;
 }
+.boxDateToday .datActual {
+  font-family: "Nunito", sans-serif;
+  font-size: 5vw;
+  font-weight: 900;
+}
 
 .nextBoxDate {
   background: #fff;
+  border: 4px solid #FC637D;
+  border-radius: 20px;
+  color: #052167;
+}
+.nextBoxDate p {
+  margin: 0;
+}
+.nextBoxDate p b {
+  color: #FC637D;
+  font-weight: 900;
+}
+.nextBoxDate h3 {
+  font-weight: 700;
 }
 
 .btn-info {
   color: #fff;
   text-decoration: none;
+}
+
+.boxDetail {
+  padding: 0.6rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.boxDetail p {
+  margin: 0;
+  cursor: pointer;
+}
+.boxDetail p:hover {
+  color: #1947BA;
+}
+.boxDetail span {
+  color: #FC637D;
+}
+
+.commentDetail {
+  background-color: #fff;
+  color: #0A083A;
+  padding: 0.6rem;
+  border-radius: 10px;
+}
+
+.cancelarCita {
+  cursor: pointer;
+  color: #052167;
+  font-weight: 800;
+}
+.cancelarCita:hover {
+  color: #1947BA;
 }
 
 .arrowSlide1 {

@@ -67,10 +67,13 @@ let header = `
 </div>
 `;
 
-
+let footer = `
+<small>© Todos los derechos reservados 2022 | PetTopia</small>
+`;
 
 $("body").append(modal);
 $("#header").append(header);
+$("#footer").append(footer);
 
 if ($(".boxSliderHero")[0]) {
     ///slider Hero
@@ -160,14 +163,14 @@ $("#agendar").on("click", () => {
     `);
 });
 ////metodo detalle
-$("#detalle").on("click", () => {
+$(".detalleModal").on("click", () => {
     $("#mdGeneral").modal("show");
     $(".modal-title").html("Baño y peluquería");
     $(".modal-body").html(`
         <p class="d-block text-center">Viernes 12 / OCT / 22  Hora: 3:00 p. m.</p>
         <p class="d-block text-center">Se le implemento un champu especial para el cuidado del cabello según la raza.</p>
-        <small class="d-block text-center"><strong>Recomendaciones:</strong> lorem indusrsr jhsgufs </small>
-        <figure class="lobo"><img src="image/wolf.svg"></figure>  
+        <small class="d-block text-center commentDetail"><strong>Recomendaciones:</strong> lorem indusrsr jhsgufs </small>
+         
         <figure class="pareja"><img src="image/pairPet.svg"></figure>  
     `);
 });
