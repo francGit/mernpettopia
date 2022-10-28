@@ -1,0 +1,21 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .swiper-wrapper{
+    min-height: 40vh;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }

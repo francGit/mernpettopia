@@ -1,4 +1,6 @@
 import React from 'react';
+import HeroSlide from '../components/HeroSlide';
+import ProductSlider from '../components/ProductSlider';
 
 const Home = () => {
   return (
@@ -19,22 +21,11 @@ const Home = () => {
                  </div>
                  <div className="col-md-5">
                    <div className="boxSliderHero">
-                       <div className="itemSlide">
-                           <img src="image/delivery.svg" alt="" className="img-fluid pt-5 mt-4" ></img>
-                       </div>
-                         <div className="itemSlide">
-                             <img src="image/imgslider.svg" alt="" className="img-fluid"></img>
-                         </div>
+                    <HeroSlide />
+                      
                        
                    </div>
-                   <ul className="arrowSlide1">
-                  <li>
-                     <img src="image/arrow-left-circle.svg" className="prev" alt=""></img>
-                  </li>
-                  <li>
-                     <img src="image/arrow-r-circle.svg" className="next" alt=""></img>
-                  </li>
-                   </ul>
+              
                  </div>
              </div>
          </div>
@@ -52,147 +43,9 @@ const Home = () => {
                  </div>
              </div>
              <div className="row">
+                
                  <div className="sliderServicios">
-                     {/* <!-- item 1--> */}
-                     <div className="itemServicio">
-                         <div className="boxItem">
-                             <div className="boxIcon">
-                                 <figure>
-                                     <img src="image/Bano_y_peluqueria.svg" alt="" className="img-fluid"></img>
-                                 </figure>
-                             </div>
-                             <div className="boxTexto">
-                                 <h2>Baño y peluquería</h2>
-                             </div>
-                         </div>
-                     </div>
-                     {/* <!-- fin item 1-->
-                     <!-- item 2--> */}
-                     <div className="itemServicio">
-                         <div className="boxItem">
-                             <div className="boxIcon">
-                                 <figure>
-                                     <img src="image/vacunacion.svg" alt="" className="img-fluid"></img>
-                                 </figure>
-                             </div>
-                             <div className="boxTexto">
-                                 <h2>Vacunación</h2>
-                             </div>
-                         </div>
-                     </div>
-                     {/* <!-- fin item 2-->
-                     <!-- item 3--> */}
-                     <div className="itemServicio">
-                         <div className="boxItem">
-                             <div className="boxIcon">
-                                 <figure>
-                                     <img src="image/Servicios_dentales.svg" alt="" className="img-fluid"></img>
-                                 </figure>
-                             </div>
-                             <div className="boxTexto">
-                                 <h2>Profilaxis</h2>
-                             </div>
-                         </div>
-                     </div>
-                     {/* <!-- fin item 3-->
-                     <!-- item 4--> */}
-                     <div className="itemServicio">
-                         <div className="boxItem">
-                             <div className="boxIcon">
-                                 <figure>
-                                     <img src="image/Guarderia_y_hotel.svg" alt="" className="img-fluid"></img>
-                                 </figure>
-                             </div>
-                             <div className="boxTexto">
-                                 <h2>Guarderia y hotel</h2>
-                             </div>
-                         </div>
-                     </div>
-                     {/* <!-- fin item 4-->
-                     <!-- item 5--> */}
-                     <div className="itemServicio">
-                         <div className="boxItem">
-                             <div className="boxIcon">
-                                 <figure>
-                                     <img src="image/Atencion_de_urgencias.svg" alt="" className="img-fluid"></img>
-                                 </figure>
-                             </div>
-                             <div className="boxTexto">
-                                 <h2>Urgencias</h2>
-                             </div>
-                         </div>
-                     </div>
-                     {/* <!-- fin item 5-->
-                     <!-- item 6--> */}
-                     <div className="itemServicio">
-                         <div className="boxItem">
-                             <div className="boxIcon">
-                                 <figure>
-                                     <img src="image/on_demand_icon.svg" alt="" className="img-fluid"></img>
-                                 </figure>
-                             </div>
-                             <div className="boxTexto">
-                                 <h2>Servicios en casa</h2>
-                             </div>
-                         </div>
-                     </div>
-                     {/* <!-- fin item 6-->
-                     <!-- item 7--> */}
-                     <div className="itemServicio">
-                         <div className="boxItem">
-                             <div className="boxIcon">
-                                 <figure>
-                                     <img src="image/ConsultaGeneral.svg" alt="" className="img-fluid"></img>
-                                 </figure>
-                             </div>
-                             <div className="boxTexto">
-                                 <h2>Consulta general</h2>
-                             </div>
-                         </div>
-                     </div>
-                     {/* <!-- fin item 7-->
-                     <!-- item 8--> */}
-                     <div className="itemServicio">
-                         <div className="boxItem">
-                             <div className="boxIcon">
-                                 <figure>
-                                     <img src="image/Tratamientos_de_heridas.png" alt="" className="img-fluid"></img>
-                                 </figure>
-                             </div>
-                             <div className="boxTexto">
-                                 <h2>Tratamientos de heridas</h2>
-                             </div>
-                         </div>
-                     </div>
-                     {/* <!-- fin item 8-->
-                     <!-- item 9--> */}
-                     <div className="itemServicio">
-                         <div className="boxItem">
-                             <div className="boxIcon">
-                                 <figure>
-                                     <img src="image/Laboratorio.svg" alt="" className="img-fluid"></img>
-                                 </figure>
-                             </div>
-                             <div className="boxTexto">
-                                 <h2>Exámenes de laboratorio</h2>
-                             </div>
-                         </div>
-                     </div>
-                     {/* <!-- fin item 9-->
-                     <!-- item 10--> */}
-                     <div className="itemServicio">
-                         <div className="boxItem">
-                             <div className="boxIcon">
-                                 <figure>
-                                     <img src="image/Cirugia.svg" alt="" className="img-fluid"></img>
-                                 </figure>
-                             </div>
-                             <div className="boxTexto">
-                                 <h2>Cirugía</h2>
-                             </div>
-                         </div>
-                     </div>
-                     {/* <!-- fin item 10--> */}
+                    <ProductSlider/> 
                  </div>
              </div>
          </div>
