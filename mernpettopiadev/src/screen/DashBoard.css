@@ -1,0 +1,32 @@
+.listadoHistorial{
+    max-height: 54vh;
+    overflow-y: scroll;
+    padding-right: 20px;
+
+}
+.listadoHistorial .itemList .boxDetail strong{
+    width: 34%;
+}
+
+
+/* width */
+.listadoHistorial::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .listadoHistorial::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  .listadoHistorial::-webkit-scrollbar-thumb {
+    background: #1947BA;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .listadoHistorial::-webkit-scrollbar-thumb:hover {
+    background: #FC637D;
+  }

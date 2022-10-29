@@ -59,7 +59,7 @@ const ProductSlider = () => {
                   slidesPerView: 4,
                 },
               }}
-        >
+        > 
             <SwiperSlide>
                 <ItemServSlide data={{imgSrcSlide:img1, nameService:'Baño y peluquería'}} />
             </SwiperSlide>
@@ -90,8 +90,6 @@ const ProductSlider = () => {
             <SwiperSlide>
                 <ItemServSlide data={{imgSrcSlide:img10, nameService:'Cirugía'}} />
             </SwiperSlide>
-           
-
         </Swiper>
     </div>
   )
