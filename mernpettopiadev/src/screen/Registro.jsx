@@ -86,7 +86,7 @@ const Registro = () => {
                         <img src="image/cat1.png" alt="" className="img fluid" />
                     </figure>
                 </div>
-                <div className="btnBox"><p>Volver al inicio<span><a href="login.html">aquí</a></span></p></div>
+                <div className="btnBox"><p>Volver al inicio<span><a href="/login">aquí</a></span></p></div>
                 <div className="dog1">
                     <figure>
                         <img src="image/dog1.png" alt="" className="img fluid" />

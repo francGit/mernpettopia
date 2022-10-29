@@ -2,8 +2,6 @@ import React from 'react'
 
 export const Navbar = () => {
 
- 
-
   return (
     <>
     <header id='header'>
@@ -37,13 +35,13 @@ export const Navbar = () => {
              <div className="boxLog">
              <ul>
              <li className="btnlogin">
-             <a href="login.html"><i> <img src="image/user.svg" alt="" className="img-fluid"></img></i> </a>
+             <a href="/login"><i> <img src="image/user.svg" alt="" className="img-fluid"></img></i> </a>
            </li>
                <li className="btnexit">
-                 <a href="index.html"><i> <img src="image/exit.svg" alt="" className="img-fluid"></img></i> </a>
+                 <a href="/"><i> <img src="image/exit.svg" alt="" className="img-fluid"></img></i> </a>
                </li>
              <li className="btnagendar">
-              <a href="agendar.html"><span>Agendar cita</span> </a>
+              <a href="/agendar"><span>Agendar cita</span> </a>
               </li> 
              </ul>
            </div>

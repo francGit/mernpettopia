@@ -1,24 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; 
+import ReactDOM from 'react-dom/client';    
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import FooterSite from './components/FooterSite';
 import { Navbar } from './components/Navbar';
-import Home from './screen/Home'; 
-import { FooterSite } from './components/FooterSite';
 import './index.css';
-import Login from './screen/Login';
-import Registro from './screen/Registro';
-import Agendar from './screen/Agendar';
-import DashBoard from './screen/DashBoard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+ <React.StrictMode>
+    <BrowserRouter>
     <Navbar/>
-    <Home /> 
-    {/* <Login/>
-    <Registro/>
-    <Agendar/>
-    <DashBoard/> */}
-    <FooterSite/>
+     <App/>
+     <FooterSite/>
+    </BrowserRouter>
   </React.StrictMode>
 );
  

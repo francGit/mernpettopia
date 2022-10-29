@@ -75,7 +75,7 @@ const Agendar = () => {
       <div className="box">
         <div className="boxRegPeludo">
           <div className="btnBox">
-            <p>Volver al dashboard <span><a href="dashboard.html">aquí</a></span></p>
+            <p>Volver al dashboard <span><a href="/dashboard">aquí</a></span></p>
           </div>
 
         </div>
