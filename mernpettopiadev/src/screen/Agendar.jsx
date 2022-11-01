@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 const Agendar = () => {
 
      
@@ -75,7 +75,7 @@ const Agendar = () => {
       <div className="box">
         <div className="boxRegPeludo">
           <div className="btnBox">
-            <p>Volver al dashboard <span><a href="/dashboard">aquí</a></span></p>
+            <p>Volver al dashboard <span><Link to="/dashboard">aquí</Link></span></p>
           </div>
 
         </div>

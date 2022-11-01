@@ -1,10 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export const Navbar = () => {
-
+const Navbar = () => {
   return (
     <>
-    <header id='header'>
+   <header id='header'>
     <div className="container">
      
      <div className="boxNav">
@@ -12,7 +12,7 @@ export const Navbar = () => {
          <div className="container-fluid  ">
            <div className="boxLogo">
              <figure>
-               <img src="image/logo.svg" alt="" className="img-fluid"></img>
+               <img src="image/logo.svg" alt="" className="img-fluid"/>
              </figure>
            </div>
            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -20,39 +20,41 @@ export const Navbar = () => {
              <span className="navbar-toggler-icon"></span>
            </button>
            <div className="collapse navbar-collapse" id="navbarNav">
-             <span className="dataUserDash">Bienven@ a PetTopia: <b className="logUser">User</b> <i><img src="image/Edit.svg" className="img-fluid" alt=""></img></i></span>
              <ul className="navbar-nav menu">
                <li className="nav-item">
-                 <a className="nav-link active" aria-current="page" href="./#inicio">Inicio</a>
+                 <Link className="nav-link active" aria-current="page"  to="/"><i class="bi bi-house-heart-fill"></i> Inicio</Link>
                </li>
                <li className="nav-item">
-                 <a className="nav-link" href="./#servicios">Servicios</a>
+                 <Link className="nav-link"  to="/dashboard"><i class="bi bi-file-medical-fill"></i> Dasboard</Link>
                </li>
                <li className="nav-item">
-                 <a className="nav-link" href="./#equipo">Equipo</a>
+                 <Link className="nav-link"  to="/mascotas"><i class="bi bi-file-medical-fill"></i> Mascotas</Link>
+               </li>
+               <li className="nav-item">
+                 <Link className="nav-link"  to="/usuarios"><i class="bi bi-file-medical-fill"></i> Usuarios</Link>
+               </li>
+               <li className="nav-item">
+                 <Link className="nav-link"  to="/agendar"> <i class="bi bi-calendar-check-fill"></i> Agendar cita</Link>
+               </li>
+               <li className="nav-item">
+                 <Link className="nav-link"  to="/login"><i class="bi bi-person-fill"></i> Login</Link>
+               </li>
+               <li className="nav-item">
+                 <Link className="nav-link"  to="/"><i class="bi bi-box-arrow-right"></i> Salir</Link>
                </li>
              </ul>
-             <div className="boxLog">
-             <ul>
-             <li className="btnlogin">
-             <a href="/login"><i> <img src="image/user.svg" alt="" className="img-fluid"></img></i> </a>
-           </li>
-               <li className="btnexit">
-                 <a href="/"><i> <img src="image/exit.svg" alt="" className="img-fluid"></img></i> </a>
-               </li>
-             <li className="btnagendar">
-              <a href="/agendar"><span>Agendar cita</span> </a>
-              </li> 
-             </ul>
-           </div>
            </div>
         
          </div>
        </nav>
+       
      </div>
      
      </div>
+     <span className="dataUserDash">Bienven@ a PetTopia: <b className="logUser">User</b> <i><img src="image/Edit.svg" className="img-fluid" alt=""/></i></span>
     </header>
     </>
   )
 }
+
+export default Navbar

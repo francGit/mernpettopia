@@ -1,5 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import ItemHistorialDashBorad from '../components/ItemHistorialDashBorad'
+
 import '../screen/DashBoard.css'
 const DashBoard = () => {
   return (
@@ -32,7 +34,7 @@ const DashBoard = () => {
                       <li>Vivo en: <b>Bogota - Colombia</b></li>
                       <li>Soy mienbro de PetTopia hace: <b>5 años</b></li>
                     </ul>
-                    <a href="agendar.html" className="btn btn-info"> Agendar cita</a>
+                    <Link to="/agendar" className="btn btn-info"> Agendar cita</Link>
                     <hr className="mt-3" />
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 const Login = () => {
   return (
    <>
@@ -40,7 +40,7 @@ const Login = () => {
                         <img src="image/cat1.png" alt="" className="img fluid" />
                     </figure>
                 </div>
-                <div className="btnBox"><p>Registra tu peludo <span><a href="/registro">aquí</a></span></p></div>
+                <div className="btnBox"><p>Registra tu peludo <span><Link to="/registro">aquí</Link></span></p></div>
                 <div className="dog1">
                     <figure>
                         <img src="image/dog1.png" alt="" className="img fluid" />

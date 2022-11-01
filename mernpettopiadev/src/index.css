@@ -19,3 +19,46 @@
     display: block;
     width: 100%;
   }
+
+  .dataUserDash{
+    display: none;
+  }
+
+  .btnexit{
+    display: none;
+  }
+
+  .dataUserDash{
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #1947ba;
+    color: #fff;
+  }
+  #navbarNav{
+    justify-content: center;
+  }
+  .Dashboard{
+    padding-bottom: 2rem;
+  }
+
+  .nav-link{
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #0A083A;
+  }
+  .nav-link i{
+    color: #1947ba;
+  }
+  .nav-link.active{
+    background-color: #FC637D;
+    color:#fff !important;
+  }
+  .nav-link:hover{
+    text-decoration: none !important;
+    background: #fff !important;
+    border-radius: 20px;
+    color: #1947ba !important;
+  }
+
+ 
