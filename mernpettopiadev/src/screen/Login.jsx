@@ -29,7 +29,7 @@ const Login = () => {
                   </div>
 
                   <div className="col-md-4 mx-auto mt-5 mb-5">
-                    <div id="login" className="btn btn-primary mb-3 mx-auto d-block">Ingresar</div>
+                    <div id="login"  className="btn btn-primary mb-3 mx-auto d-block">Ingresar</div>
                   </div>
 
                   

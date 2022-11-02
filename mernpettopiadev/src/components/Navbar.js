@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = ({ user, setUser }) => {
-  const login = () => {
+  const login = (login) => {
     //request done
     setUser({
       id: 1,
