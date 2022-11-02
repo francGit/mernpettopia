@@ -2,7 +2,11 @@ import React from 'react'
 
 const Servicios = () => {
   return (
-    <div>Servicios</div>
+    <div className='Container'>
+    <div className='row'>
+        <h1>Servicios</h1>
+        </div>
+    </div>
   )
 }
 

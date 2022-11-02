@@ -61,4 +61,8 @@
     color: #1947ba !important;
   }
 
+  .nav-link:active{
+    background-color: #FC637D;
+    color:#fff !important;
+  }
  
