@@ -66,3 +66,55 @@
     color:#fff !important;
   }
  
+  .resetHv{
+    height: auto !important;
+    max-height: inherit !important;
+    overflow: inherit;
+  }
+  .boxDateToday .datActual{
+    font-size: 4vw;
+  }
+  .nextBoxDate h3{
+    font-size: 1rem;
+  }
+
+  /* estilos action buttons */
+
+  .actionsIcons{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 1.2rem;
+    
+  }
+
+  .actionsIcons i{
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid rgb(241, 241, 241);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: 1px solid rgb(241, 241, 241);
+    background: rgb(241, 241, 241);
+    border-radius: 8px;
+  }
+
+  .actionsIcons i:hover{
+    opacity: 0.6;
+  }
+
+  .actionsIcons i:nth-child(1){
+    color:#FC637D;
+  }
+  .actionsIcons i:nth-child(2){
+    color:#1947ba;
+  }
+  .actionsIcons i:nth-child(3){
+    color:#0A083A;
+  }
+
+  

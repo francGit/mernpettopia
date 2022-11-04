@@ -21,7 +21,7 @@ const Agendar = () => {
                   </div>
                   <div className="mb-3">
                     <label for="servicio" className="form-label">Servicio:</label>
-                    <select className="form-select" aria-label="" id="servicio">
+                    <select className="form-select" aria-label="" id="servicio" name='servicio'>
                       <option selected>Selecciona una opción</option>
                       <option value="1">Baño y peluquería</option>
                       <option value="2">Vacunación</option>
@@ -38,11 +38,11 @@ const Agendar = () => {
                 <div className="col-md-6 p-5">
                   <div className="mb-3">
                     <label for="hora" className="form-label">Hora:</label>
-                    <input type="time" className="form-control" id="hora" placeholder="Fecha de la Cita:" />
+                    <input type="time" className="form-control" id="hora" placeholder="Fecha de la Cita:" name='hora' />
                   </div>
                   <div className="mb-3">
                     <label for="profesional" className="form-label">Profesional:</label>
-                    <select className="form-select" aria-label="" id="profesional">
+                    <select className="form-select" aria-label="" id="profesional" name='profesional'>
                       <option selected>Selecciona una opción</option>
                       <option value="1">Juan mecanico / veterinario</option>
                       <option value="2">Carlos Bustos / recreacionista canino</option> 
