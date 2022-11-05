@@ -1,21 +1,21 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 
-const Mascotas = () => {
+const Productos = () => {
 
-  let url = "http://localhost:3400/pets";
+  let url = "http://localhost:3400/products";
 
-  const [pets, setPets] = useState([]);
+  const [prods, setProds] = useState([]);
   useEffect(() => {
     const fetchApi = async () => {
       const response = await fetch(url);
       const result = await response.json();
-      setPets(result);
+      setProds(result);
     };
     fetchApi();
   }, [url]);
 ///proloader antes de cargar
-  if(pets.length === 0){
+  if(prods.length === 0){
     return (
       <div className="alert alert-warning text-center">
          Cargando... 
@@ -26,36 +26,44 @@ const Mascotas = () => {
 
   return (
     <>
-      <section className="boxLogin Dashboard">
+        <section className="boxLogin Dashboard">
       <div className="container p-0">
         <div className="row m-0">
           <div className="row">
             <div className="col-md-12 pt-4">
               <div className="boxHistorialServicios p-4">
-                <p className="titleHistorial"><i> <img src="./image/pairPet.svg" width="80" alt='Mascotas' /> </i> Listado de <b>Mascotas</b> </p> 
+                <p className="titleHistorial"><i> <img src="./image/wolf.svg" width="50" alt='Mascotas' /> </i> Listado de <b>Productos</b> </p> 
                 <hr />
                 <div className="listadoHistorial resetHv">
                     <table className="table">
                       <thead>
                         <tr>
-                          <th>Photo</th>
-                          <th>NamePet</th>
-                          <th>Raza</th>
-                          <th>Type</th>
-                          <th>Years</th>
+                          <th>SKU</th>
+                          <th>Name Prod</th>
+                          <th>Description</th>
+                          <th>Price</th>
+                          <th>Stock</th>
+                          <th>Available</th>
                           <th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {pets.map((pets) => (
-                          <tr key={pets._id}>
+                        {prods.map((prods) => (
+                          <tr key={prods._id}>
                             <th>
-                              <div style={{ backgroundImage: `url(${pets.avatarUrl})` }} className="avatarBoxPet" />
+                              {prods.sku}
                             </th>
-                            <td>{pets.namepet}</td>
-                            <td>{pets.raza}</td>
-                            <td>{pets.tipo}</td> 
-                            <td>{pets.anios}</td> 
+                            <td>{prods.name}</td>
+                            <td>{prods.description}</td>
+                            <td>$ {prods.price}</td> 
+                            <td>{prods.stock} /Uds</td> 
+                            <td>{
+                                prods.stock === 0 ?  (
+                                  <small className='alert alert-danger'>No esta disponible</small>
+                                ): (
+                                  <small> Disponible </small>
+                                )
+                              } </td> 
                             <td>
                               <div className="actionsIcons">
                               <i className="bi bi-trash"></i>
@@ -81,4 +89,4 @@ const Mascotas = () => {
   )
 }
 
-export default Mascotas
+export default Productos

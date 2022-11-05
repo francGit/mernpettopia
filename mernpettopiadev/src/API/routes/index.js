@@ -4,6 +4,7 @@ const router = express.Router();
 const customersController = require('../controllers/customersController');
 const productsController = require('../controllers/productsController');
 const petsController = require('../controllers/petsController');
+const servicesController = require('../controllers/servicesController');
 
 module.exports = function(){
     // post: / customers
@@ -29,11 +30,16 @@ module.exports = function(){
     //delete /products/:id
     router.delete('/products/:id', productsController.delete);
 
-
     ////pets
 
       //get: / products
       router.get('/pets', petsController.list);
+
+
+    ////pets
+
+      //get: / products
+      router.get('/services', servicesController.list);
 
 
 

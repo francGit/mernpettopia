@@ -1,18 +1,20 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = ({ user, setUser }) => {
-  const login = (login) => {
+ 
+  const login = () => {
     //request done
+   
     setUser({
-      id: 1,
-      name: "John",
-    });
-
-    console.log(setUser)
+      id:1,
+      nombre:"hellosos"
+    });  
+    
   };
 
-  const logOut = () => setUser(null);
+ 
+
+  const logOut = () =>  setUser(null) ;
 
   return (
     <>
@@ -49,8 +51,8 @@ const Navbar = ({ user, setUser }) => {
                         <i className="bi bi-house-heart-fill"></i> Inicio
                       </NavLink>
                     </li>
-                 
                     
+
                     {/* valida si usruario esta logueado */}
                     {user ? (
                       <>
@@ -61,17 +63,26 @@ const Navbar = ({ user, setUser }) => {
                     </li>
                     <li className="nav-item">
                       <NavLink className="nav-link" to="/mascotas">
-                        <i className="bi bi-file-medical-fill"></i> Mascotas
+                        <i className="bi bi-bookmark-heart-fill"></i> Mascotas
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/productos">
+                        <i className="bi bi-bag-heart-fill"></i> Productos
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/servicios">
+                        <i className="bi bi-award-fill"></i> Servicios
                       </NavLink>
                     </li>
                     <li className="nav-item">
                       <NavLink className="nav-link" to="/usuarios">
-                        <i className="bi bi-file-medical-fill"></i> Usuarios
+                      <i className="bi bi-hand-thumbs-up-fill"></i> Usuarios
                       </NavLink>
                     </li>
                     <li className="nav-item">
-                      <NavLink className="nav-link" to="/agendar">
-                        {" "}
+                      <NavLink className="nav-link" to="/agendar"> 
                         <i className="bi bi-calendar-check-fill"></i> Agendar cita
                       </NavLink>
                     </li>
@@ -102,6 +113,12 @@ const Navbar = ({ user, setUser }) => {
                       <NavLink className="nav-link" to="/contacto">
                         <i className="bi bi-file-medical-fill"></i> Contáctenos
                       </NavLink>
+                      
+                    </li>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/registro">
+                        <i className="bi bi-file-medical-fill"></i> Registro
+                      </NavLink>
                     </li>
                         <li className="nav-item">
                           <NavLink
@@ -114,6 +131,7 @@ const Navbar = ({ user, setUser }) => {
                             <i className="bi bi-person-fill"></i> Login
                           </NavLink>
                         </li>
+
                       </>
                     )}
                   </ul>
@@ -122,12 +140,22 @@ const Navbar = ({ user, setUser }) => {
             </nav>
           </div>
         </div>
-        <span className="dataUserDash">
-          Bienven@ a PetTopia: <b className="logUser"> sss</b>{" "}
-          <i>
-            <img src="image/Edit.svg" className="img-fluid" alt="" />
-          </i>
-        </span>
+        {
+          user ? (
+            <div>
+            <span className="dataUserDash">
+              Bienven@ a PetTopia: <b className="logUser">{} </b>
+              <i>
+                <img src="image/Edit.svg" className="img-fluid" alt="" />
+              </i>
+            </span>
+        </div>
+          ) : (
+           <span> </span>
+          )
+        }
+         
+      
       </header>
     </>
   );

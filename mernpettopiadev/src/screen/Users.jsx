@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const Users = () => {
 
-  let url = "http://localhost:3200/customers";
+  let url = "http://localhost:3400/customers";
 
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -31,10 +31,9 @@ const Users = () => {
               <div className="col-md-12 pt-4">
                 <div className="boxHistorialServicios p-4">
                   <p className="titleHistorial">
-                    <i>
-                      {" "}
+                    <i> 
                       <img src="./image/userDash.svg" width="60" alt="" />{" "}
-                    </i>{" "}
+                    </i> 
                     Listado de <b>Usuarios</b>
                   </p>
                   <hr />
@@ -53,7 +52,7 @@ const Users = () => {
                       </thead>
                       <tbody>
                         {users.map((user) => (
-                          <tr key={user.id}>
+                          <tr key={user._id}>
                             <th>893776353</th>
                             <td>{user.name}</td>
                             <td>{user.lastname}</td>
@@ -62,9 +61,9 @@ const Users = () => {
                             <td>Rufus</td>
                             <td>
                               <div className="actionsIcons">
-                              <i class="bi bi-trash"></i>
-                              <i class="bi bi-pencil-square"></i>
-                              <i class="bi bi-eye"></i>
+                              <i className="bi bi-trash"></i>
+                              <i className="bi bi-pencil-square"></i>
+                              <i className="bi bi-eye"></i>
                               </div>
                             </td>
                           </tr>

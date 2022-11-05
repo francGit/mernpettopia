@@ -1,9 +1,46 @@
-import React from 'react'
+// import React, { useState } from 'react'
+import { useState } from 'react';
 import {Link} from 'react-router-dom'
 const Registro = () => {
+
+  
+  const  [inputs, setInputs] = useState({
+    nameanimal:"",
+    typeanimal: "",
+    racetype:"",
+    years:"",
+    owner:"",
+    identification:"",
+    phone:"",
+    email:"",
+    address:"",
+    country:"",
+    city:"",
+    file:"",
+    commit:""
+  });
+  
+  const handleSubmit = (e) =>{
+   e.preventDefault();
+   console.log('controlado');
+   console.log(inputs);
+  }
+
+ const handleInputs = (e) => {
+  e.preventDefault();
+  const {target} = e;
+  setInputs(
+    {
+      ...inputs,
+    [target.name] : target.value
+    }
+  )
+  console.log(target.value);
+ }
+
   return (
     <>
-          <section className="boxLogin">
+    <section className="boxLogin">
     <div className="container-fluid p-0">
        <div className="row m-0">
         <div className="col-md-3 h60 justify-content-center d-flex align-items-center leftBox regLeft">
@@ -18,65 +55,70 @@ const Registro = () => {
             <div className="boxForm">
                 <h2 className="SubTitle">Registra tu Peludo</h2>
 
-                <div className="mb-3">  
-                    <input type="text" className="form-control" id="namedog" placeholder="Nombre del peludo" />
+               <form action='' onSubmit={handleSubmit}>
+               <div className="mb-3">  
+
+                    <input type="text" onChange={handleInputs} className="form-control" id="namedog" name='nameanimal' placeholder="Nombre del peludo" value={inputs.nameanimal} />
                   </div>
                   <div className="mb-3">
-                      
-                    <select className="form-select" aria-label="Mi peludo es:" id="tipo">
-                        <option selected>Mi peludo es:</option>
-                        <option value="perro">Perro</option>
-                        <option value="gato">Gato</option>
-                      </select>
+                  <select className="form-select" name='typeanimal' onChange={handleInputs} value={inputs.typeanimal}>
+                    <option value="noselected">Mi peludo es</option>
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option> 
+                  </select>
+                 
                     </div>
                   <div className="mb-3">
                     
-                    <input type="text" className="form-control" id="raza" placeholder="Raza" />
+                    <input type="text" onChange={handleInputs} className="form-control" id="raza" placeholder="Raza" name='racetype' value={inputs.racetype}/>
                   </div>
 
                   <div className="mb-3">
                     
-                    <input type="text" className="form-control" id="years" placeholder="¿Cuantos años tiene el peludo?" />
+                    <input type="text" onChange={handleInputs} className="form-control" id="years" placeholder="¿Cuantos años tiene el peludo?"  name='years' value={inputs.years}/>
                   </div>
                   <div className="mb-3">
                     
-                    <input type="text" className="form-control" id="amo" placeholder="Nombre del dueño" />
+                    <input type="text" onChange={handleInputs} className="form-control" id="owner" name='owner' placeholder="Nombre del dueño" value={inputs.owner}/>
                   </div>
                   <div className="mb-3">
                     
-                    <input type="text" className="form-control" id="cc" placeholder="Cédula del dueño" />
+                    <input type="text" onChange={handleInputs} className="form-control" id="cc" name='identification' placeholder="Cédula del dueño" value={inputs.identification} />
                   </div>
                   <div className="mb-3">
                     
-                    <input type="text" className="form-control" id="tel" placeholder="Teléfono" />
+                    <input type="text" onChange={handleInputs} className="form-control" id="tel" name='phone' placeholder="Teléfono" value={inputs.phone}/>
                   </div>
                   <div className="mb-3">
                     
-                    <input type="email" className="form-control" id="email" placeholder="Email" />
+                    <input type="email" onChange={handleInputs} className="form-control" id="email" placeholder="Email" name='email' value={inputs.email} />
                   </div>
                   <div className="mb-3">
                     
-                    <input type="text" className="form-control" id="dir" placeholder="Dirección" />
+                    <input type="text" onChange={handleInputs} className="form-control" id="dir" placeholder="Dirección" name='address' value={inputs.address} />
                   </div>
+                  
                   <div className="mb-3">
-                    <input type="text" className="form-control" id="pais" placeholder="País" />
+                    <input type="text" onChange={handleInputs} className="form-control" id="pais" placeholder="País" name='country' value={inputs.country} />
                   </div>
                   <div className="mb-3">
                     
-                    <input type="text" className="form-control" id="cuidad" placeholder="Ciudad" />
+                    <input type="text" onChange={handleInputs} className="form-control" id="cuidad" placeholder="Ciudad" name='city' value={inputs.city}/>
                   </div>
 
                   <div className="mb-3 text-center">
-                    <input className="form-control" type="file" id="formFile" />
+                    <input onChange={handleInputs} className="form-control" type="file" id="formFile" name='file' value={inputs.file} />
                   </div>
 
                   <div className="mb-3">
-                    <textarea className="form-control" id="textarea" rows="3" placeholder="Recomendaciones del dueño"></textarea>
+                    <textarea onChange={handleInputs} className="form-control" id="textarea" rows="3" placeholder="Recomendaciones del dueño" name='commit' value={inputs.commit}></textarea>
                   </div>
                   
                   <div className="col-md-5 mx-auto mt-5 mb-5">
-                    <div className="btn btn-primary mb-3 mx-auto d-block pt-3 pb-3" id="registro"> Registrar peludo</div>
+                    <button type='submit' className="btn btn-primary mb-3 mx-auto d-block pt-3 pb-3" id="registro" onClick={handleSubmit}> Registrar peludo</button>
                   </div>
+
+               </form>
                   
                   
                 </div>

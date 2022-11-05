@@ -88,8 +88,12 @@
     
   }
 
-  .actionsIcons i{
-    cursor: pointer;
+
+
+  .actionsIcons{
+    max-width: 120px;
+    & i{
+      cursor: pointer;
     transition: all 0.3s;
     border: 1px solid rgb(241, 241, 241);
     width: 30px;
@@ -101,11 +105,16 @@
     border: 1px solid rgb(241, 241, 241);
     background: rgb(241, 241, 241);
     border-radius: 8px;
-  }
+      &:hover{
+        opacity: 0.6;
+      }
+      &:nth-child(1){
+        color:#FC637D;
+      }
 
-  .actionsIcons i:hover{
-    opacity: 0.6;
+    }
   }
+  
 
   .actionsIcons i:nth-child(1){
     color:#FC637D;
@@ -117,4 +126,26 @@
     color:#0A083A;
   }
 
-  
+  .avatarBoxPet{
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    border-radius: 100px;
+  }
+
+  .err404{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .blk{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .listaEquipo{
+    font-size: 2rem;
+  }

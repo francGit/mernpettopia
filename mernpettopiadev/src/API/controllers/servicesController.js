@@ -1,17 +1,17 @@
-const Products = require('../models/Products');
+const Services = require('../models/Services');
 ////actualizar cliente
 
 
 ////agregar producto
 exports.add = async(req,res) =>{
-    const product = Products(req.body);
+    const service = Services(req.body);
     try {
-        await product.save();
-        res.json({ message:'Nuevo producto agregado' });
+        await service.save();
+        res.json({ message:'Nuevo servicio agregado' });
     } catch (error) {
         if(error.code === 11000){
             res.status(400).json({
-                message: `Ya existe un producto con el sku: ${req.body.sku}`,
+                message: `Ya existe un servicio con el mismo nombre: ${req.body.name}`,
             });
         }else{
             res.status(400).json({
@@ -27,8 +27,8 @@ exports.add = async(req,res) =>{
 
 exports.list = async (req,res) => {
  try {
-    const products = await Products.find({});    
-    res.json(products);
+    const services = await Services.find({});    
+    res.json(services);
  } catch (error) {
     res.status(400).json({
         message:'Error al procesar la petición'
@@ -43,12 +43,12 @@ exports.list = async (req,res) => {
 
 exports.show = async(req,res, next) => {
     try {
-        const product = await Products.findById(req.params.id);
-        if(!product){
-            res.status(404).json({message:'El producto no existe'
+        const service = await Services.findById(req.params.id);
+        if(!service){
+            res.status(404).json({message:'El servicio no existe'
         });
         }
-        res.json(product);
+        res.json(service);
     } catch (error) { 
         res.status(400).json({
             message:'Error al procesar la petición'
@@ -61,13 +61,13 @@ exports.show = async(req,res, next) => {
 exports.update = async (req,res,next) => {
     try {
         // eslint-disable-next-line no-unused-vars
-        const product = await Products.findOneAndUpdate(
+        const service = await Services.findOneAndUpdate(
             {_id: req.params.id},
             req.body,
             {new: true }
         );
         res.json({
-            message: 'product actualizado correctamente'
+            message: 'servicio actualizado correctamente'
         });
     } catch (error) {
         res.status(400).json({
@@ -80,8 +80,8 @@ exports.update = async (req,res,next) => {
 ///eliminar cliente
 exports.delete = async(req,res,next) => {
     try {
-        await Products.findOneAndDelete({ _id: req.params.id});
-        res.json({message: 'El product fue eliminado'});
+        await Services.findOneAndDelete({ _id: req.params.id});
+        res.json({message: 'El servicio fue eliminado'});
     } catch (error) {
         res.status(400).json({
             message: 'Error al procesar la peticion'

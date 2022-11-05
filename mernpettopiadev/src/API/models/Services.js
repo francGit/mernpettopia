@@ -1,14 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const productsSchema = new Schema({
+const servicesSchema = new Schema({
 
-    sku:{
-        type:String,
-        trim:true,
-        unique: true,
-        uppercase:true,
-    },
+ 
     name:{
         type:String,
         trim:true,
@@ -17,12 +12,12 @@ const productsSchema = new Schema({
         type:String,
         trim:true,
     },
+    urlImage:{
+        type:String,
+        trim:true,
+    },
     price:{
         type:Number,
-    },
-    stock:{
-        type:Number,
-        default:0,
     },
     available:{
         type:Boolean,
@@ -31,4 +26,4 @@ const productsSchema = new Schema({
 
 });
 
-module.exports = mongoose.model('Products', productsSchema);
+module.exports = mongoose.model('Services', servicesSchema);
