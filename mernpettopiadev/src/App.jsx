@@ -37,13 +37,11 @@ const App = () => {
           <Route path='/registro' element={<Registro />} />      
         <Route element={
           <ProtectedRoute user={user} />
-        }> 
-            <Route path="/agendar" element={<Agendar />} />
+        }>  
             <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/agendar" element={<Agendar />} />
             <Route path="/usuarios" element={<Users />} />
             <Route path="/mascotas" element={<Mascotas />} />
-          
             <Route path="/productos" element={<Productos />} />
             <Route path="/servicios" element={<Services />} />
         </Route> 
