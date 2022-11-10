@@ -12,8 +12,6 @@ const Navbar = ({ user, setUser }) => {
     
   };
 
- 
-
   const logOut = () =>  setUser(null) ;
 
   return (
@@ -67,8 +65,8 @@ const Navbar = ({ user, setUser }) => {
                       </NavLink>
                     </li>
                     <li className="nav-item">
-                      <NavLink className="nav-link" to="/productos">
-                        <i className="bi bi-bag-heart-fill"></i> Productos
+                      <NavLink className="nav-link" to="/regmascota">
+                        <i className="bi bi-bag-heart-fill"></i> Registro mascota
                       </NavLink>
                     </li>
                     <li className="nav-item">

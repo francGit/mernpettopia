@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 
 import { Autoplay, Pagination } from "swiper";
 ///import img
-
 import img1 from '../img/Bano_y_peluqueria.svg';
 import img2 from '../img/Vacunacion.svg';
 import img3 from '../img/Servicios_dentales.svg';

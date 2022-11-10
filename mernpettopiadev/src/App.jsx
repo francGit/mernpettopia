@@ -15,7 +15,7 @@ import FooterSite from "./components/FooterSite"
 import Navbar from './components/Navbar'
 import { useState } from 'react'
 import Contacto from './screen/Contacto'
-import Productos from './screen/Productos'
+import RegistroPet from './screen/RegistroPet'
 import Not404 from './components/Not404'
 import Services from './API/models/Services'
 
@@ -32,9 +32,11 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path='/registro' element={<Registro/>} />
           <Route path='/servicios' element={<Servicios />} />
+          {/* <Route path="/productos" element={<Productos />} /> */}
           <Route path='/equipo' element={<Equipo />} />
           <Route path='/contacto' element={<Contacto />} />  
-          <Route path='/registro' element={<Registro />} />      
+          <Route path='/registro' element={<Registro />} />  
+              
         <Route element={
           <ProtectedRoute user={user} />
         }>  
@@ -42,8 +44,9 @@ const App = () => {
             <Route path="/agendar" element={<Agendar />} />
             <Route path="/usuarios" element={<Users />} />
             <Route path="/mascotas" element={<Mascotas />} />
-            <Route path="/productos" element={<Productos />} />
+            <Route path="/regmascota" element={<RegistroPet />} />
             <Route path="/servicios" element={<Services />} />
+            
         </Route> 
          <Route path="/admin" element={<Admin />} />
         </Routes>
