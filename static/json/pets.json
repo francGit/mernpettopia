@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "634f575b5f712b2ada5c45e6"
+  },
+  "namepet": "Rocky",
+  "raza": "chauchau",
+  "tipo": "perro",
+  "anios": "5",
+  "avatarUrl": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=994&q=40",
+  "idUser": "634f564c5f712b2ada5c45d6"
+},{
+  "_id": {
+    "$oid": "634f597d5f712b2ada5c45ef"
+  },
+  "namepet": "Canopy",
+  "raza": "Salchicha",
+  "tipo": "perro",
+  "anios": "2",
+  "avatarUrl": "https://images.unsplash.com/photo-1530126483408-aa533e55bdb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80",
+  "idUser": "634f573a5f712b2ada5c45e2"
+},{
+  "_id": {
+    "$oid": "634f59ca5f712b2ada5c45f0"
+  },
+  "namepet": "Sortly",
+  "raza": "Cyberpunk",
+  "tipo": "perro",
+  "anios": "3",
+  "avatarUrl": "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+  "idUser": "634f57545f712b2ada5c45e3"
+}]

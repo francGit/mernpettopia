@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "636459a2ff2eeb05c2dea61d"
+  },
+  "sku": "00030404004",
+  "name": "Nintendo switch neon",
+  "description": "Gamers family",
+  "price": 500,
+  "stock": 1000,
+  "available": true
+}]

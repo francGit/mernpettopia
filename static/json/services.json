@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "636599221f35230b8c944848"
+  },
+  "name": "Baño y peluquería",
+  "urlImage": "",
+  "price": 12000,
+  "available": "true",
+  "description": ""
+},{
+  "_id": {
+    "$oid": "63659b2d1f35230b8c94484c"
+  },
+  "name": "Consulta general",
+  "urlImage": "https://onedrive.live.com/embed?cid=BE5D89DFF6FFF8FA&resid=BE5D89DFF6FFF8FA%21891&authkey=AEXRmHueo1kJRrk",
+  "price": 18000,
+  "available": "true",
+  "description": ""
+},{
+  "_id": {
+    "$oid": "63659b4f1f35230b8c94484d"
+  },
+  "name": "Cirugia",
+  "urlImage": "https://onedrive.live.com/embed?cid=BE5D89DFF6FFF8FA&resid=BE5D89DFF6FFF8FA%21894&authkey=AJnqrtyMtmBGIbY",
+  "price": 70000,
+  "available": "true",
+  "description": ""
+},{
+  "_id": {
+    "$oid": "63659b5b1f35230b8c94484e"
+  },
+  "name": "Curaciones",
+  "urlImage": "https://folderpetopia.s3.ir-thr-at1.arvanstorage.com/Tratamientos_de_heridas.png",
+  "price": 40000,
+  "available": "true",
+  "description": ""
+},{
+  "_id": {
+    "$oid": "6365aa9d1f35230b8c944853"
+  },
+  "name": "Urgencias",
+  "urlImage": "https://folderpetopia.s3.ir-thr-at1.arvanstorage.com/Atencion_de_urgencias.svg",
+  "price": 120000,
+  "available": "true",
+  "description": ""
+}]

@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "63627d60d1ca2b9ed34caa9a"
+  },
+  "name": "pepe",
+  "lastname": "peres",
+  "email": "pepe@api.com",
+  "phone": 243413431
+},{
+  "_id": {
+    "$oid": "63627d9bd1ca2b9ed34caa9f"
+  },
+  "name": "pepa",
+  "lastname": "pic",
+  "email": "pepa@api.com",
+  "phone": 243413431
+},{
+  "_id": {
+    "$oid": "63627fbc292f60d4c6c2a9a6"
+  },
+  "name": "juana",
+  "lastname": "de arco",
+  "email": "jnarco@api.com",
+  "phone": "76367313431",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63627ff1292f60d4c6c2a9a9"
+  },
+  "name": "Diego",
+  "lastname": "morales",
+  "email": "diemo@api.com",
+  "phone": "736367313431",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63646c62701b3092f9f6f97a"
+  },
+  "name": "Mails",
+  "lastname": "Morales Silva",
+  "email": "pmailsmorales@api.com",
+  "phone": "7368658624734",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63646c90701b3092f9f6f97e"
+  },
+  "name": "Alison",
+  "lastname": "Silva",
+  "email": "alisilva@api.com",
+  "phone": "31243553643",
+  "__v": 0
+}]
