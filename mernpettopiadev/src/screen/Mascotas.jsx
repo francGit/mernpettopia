@@ -1,27 +1,6 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React from 'react' 
 
 const Mascotas = () => {
-
-  let url = "http://localhost:3400/pets";
-
-  const [pets, setPets] = useState([]);
-  useEffect(() => {
-    const fetchApi = async () => {
-      const response = await fetch(url);
-      const result = await response.json();
-      setPets(result);
-    };
-    fetchApi();
-  }, [url]);
-///proloader antes de cargar
-  if(pets.length === 0){
-    return (
-      <div className="alert alert-warning text-center">
-         Cargando... 
-      </div>
-    )
-  }
 
 
   return (
@@ -47,15 +26,15 @@ const Mascotas = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {pets.map((pets) => (
-                          <tr key={pets._id}>
+                      
+                          <tr >
                             <th>
-                              <div style={{ backgroundImage: `url(${pets.avatarUrl})` }} className="avatarBoxPet" />
+                              <div style={{ backgroundImage: `url()` }} className="avatarBoxPet" />
                             </th>
-                            <td>{pets.namepet}</td>
-                            <td>{pets.raza}</td>
-                            <td>{pets.tipo}</td> 
-                            <td>{pets.anios}</td> 
+                            <td></td>
+                            <td></td>
+                            <td></td> 
+                            <td></td> 
                             <td>
                               <div className="actionsIcons">
                               <i className="bi bi-trash"></i>
@@ -64,7 +43,7 @@ const Mascotas = () => {
                               </div>
                             </td>
                           </tr>
-                        ))}
+                        
                       </tbody>
                     </table>
                   </div>
