@@ -6,6 +6,7 @@ const port = 3001;
 const mongoose = require('mongoose');
 ////importar modelo user
 const user = require('./models/UserModel')
+const pet = require('./models/PetModel')
 ////router
 const router = express.Router();
 app.use(express.urlencoded({ extended:true}));
@@ -51,8 +52,10 @@ const idToFind = req.params.id
 } )
 
 ///zona pets
+
+///post
 router.post('/createPet', (req,res) => {
-    let newPet = new user({
+    let newPet = new pet({
         nameanimal:req.body.nameanimal,
         typeanimal:req.body.typeanimal,
         racetype:req.body.racetype,
@@ -62,7 +65,7 @@ router.post('/createPet', (req,res) => {
         idUser:req.body.idUser
     })
     ///ToDo validar si el usuario existe
-    user.findOne({nameanimal: newPet.nameanimal},(err,user) => {
+    pet.findOne({nameanimal: newPet.nameanimal},(err,pet) => {
         if(pet){
             res.send('La mascota ya existe')
         }else{
@@ -73,7 +76,22 @@ router.post('/createPet', (req,res) => {
 
      
 })
+////metodo put pet
+router.put('/editUser/:id',(req,res) =>{
+    const idToFind = req.params.id
+    
+    } )
 
+////metodo put
+router.get('/getAllPets', async (req,res) =>{
+    const allPets = await pet.find({});
+    res.send(allPets)
+
+    } )
+
+       
+
+//////////////////////////
 app.use(router)
 
 app.listen(port, () => {

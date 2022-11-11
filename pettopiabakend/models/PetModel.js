@@ -7,8 +7,8 @@ let PetSchema = new mongoose.Schema({
     years:Number,
     file:String,
     commit:String,
-    idUser:Number
+    idUser:String
 });
 
 
-module.exports = mongoose.model('pets', PetSchema, 'pets')
+module.exports = mongoose.model('pet', PetSchema, 'pets')
