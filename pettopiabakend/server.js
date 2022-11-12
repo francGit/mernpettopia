@@ -1,5 +1,5 @@
 // console.log('hello server');
-
+const cors = require('cors');
 const express = require('express');
 const app = express();
 const port = 3001;
@@ -8,89 +8,58 @@ const mongoose = require('mongoose');
 const user = require('./models/UserModel')
 const pet = require('./models/PetModel')
 ////router
-const router = express.Router();
+const router = require('./routes/routes');
+const { createUser, editUser, deleteUser, getAllUsers } = require('./controllers/UserControllers');
+const { editPet, deletePet, getAllPets, createPet } = require('./controllers/PetControllers');
 app.use(express.urlencoded({ extended:true}));
 app.use(express.json());
 ////conexion ala base de datos
+
 mongoose.connect('mongodb+srv://framunet:MdbFranc12*@merntopia.eubrb8n.mongodb.net/merntopia?retryWrites=true&w=majority');
 ////framunet
 /////MdbFranc12*
 /////famupinto@gmail.com
 /////MongoPacho.g12
 
-router.get('/', (req,res) => {
-res.send('<div style="background: #45616e;color: #fff;font-family:sans-serif;min-height: 100vh;margin-left: -8px;margin-top: -8px;margin-right: -8px;margin-bottom: -8px;display: flex;justify-content: center;align-content: center;align-items: center;"> <h1>Ruta principal del Server</h1></div>')
-})
+/////dominios permitidos
+
+const dominiosPermitidos = [process.env.FRONTEND_URL];
+const corsOption = {
+    origin: function(origin, callback){
+        if(dominiosPermitidos.indexOf(origin) !== 1){
+            callback(null, true);
+        }else{
+            callback(new Error('No permitido por CORS'))
+        }
+    }
+}
+
+
 ///zona usuarios
 ////metodo post
-router.post('/createUser', (req,res) => {
-    let newUser = new user({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        identification: req.body.identification,
-        password:req.body.password,
-        phone:req.body.phone,
-        email: req.body.email,
-        address:req.body.address,
-        country:req.body.country,
-        city:req.body.city,
-    })
-    ///ToDo validar si el usuario existe
-    user.findOne({email: newUser.email},(err,user) => {
-        if(user){
-            res.send('Usuario ya existe')
-        }else{
-            newUser.save()
-            res.status(200).send(`Usuario creado con exito: ${newUser}`)
-        }
-    })
-})
-////metodo put
-router.put('/editUser/:id',(req,res) =>{
-const idToFind = req.params.id
+router.post('/createUser', createUser)
+////metodo Editar usuario
+router.put('/editUser/:id', editUser )
+///eliminar usuario
+router.delete('/deleteUser/:id', deleteUser)
 
-} )
+///Obtener todos los usuarios
+router.get('/getAllUsers', getAllUsers)
 
+///////////////////
 ///zona pets
 
 ///post
-router.post('/createPet', (req,res) => {
-    let newPet = new pet({
-        nameanimal:req.body.nameanimal,
-        typeanimal:req.body.typeanimal,
-        racetype:req.body.racetype,
-        years:req.body.years,
-        file:req.body.file,
-        commit:req.body.commit,
-        idUser:req.body.idUser
-    })
-    ///ToDo validar si el usuario existe
-    pet.findOne({nameanimal: newPet.nameanimal},(err,pet) => {
-        if(pet){
-            res.send('La mascota ya existe')
-        }else{
-            newPet.save()
-            res.status(200).send(`Peludo creado con éxito: ${newPet}`)
-        }
-    })
-
-     
-})
+router.post('/createPet', createPet)
 ////metodo put pet
-router.put('/editUser/:id',(req,res) =>{
-    const idToFind = req.params.id
-    
-    } )
-
-////metodo put
-router.get('/getAllPets', async (req,res) =>{
-    const allPets = await pet.find({});
-    res.send(allPets)
-
-    } )
+router.put('/editPet/:id', editPet)
+////metodo delete pet
+router.delete('/deletePet/:id', deletePet)
+////metodo get
+router.get('/getAllPets', getAllPets )
 
        
-
+app.use(cors(corsOption));
 //////////////////////////
 app.use(router)
 

@@ -7,7 +7,8 @@ let PetSchema = new mongoose.Schema({
     years:Number,
     file:String,
     commit:String,
-    idUser:String
+    idUser:String,
+    creationPetDate: {type:Date, default: Date.now}
 });
 
 

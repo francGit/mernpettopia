@@ -9,7 +9,9 @@ let UserSchema = new mongoose.Schema({
     email:String,
     address:String,
     country:String,
-    city:String
+    city:String,
+    rol: {type:Number, default:2},
+    creationDate: {type:Date, default: Date.now}
 });
 
 
