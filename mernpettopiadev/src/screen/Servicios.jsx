@@ -1,28 +1,6 @@
-import React from 'react'
-import { useEffect, useState } from 'react';
+import React from 'react' 
 const Servicios = () => {
-
-  let url = "http://localhost:3400/services";
-
-  const [services, setServices] = useState([]);
-  useEffect(() => {
-    const fetchApi = async () => {
-      const response = await fetch(url);
-      const result = await response.json();
-      setServices(result);
-    };
-    fetchApi();
-  }, [url]);
-  ///proloader antes de cargar
-  if (services.length === 0) {
-    return (
-      <div className="alert alert-warning text-center">
-        Cargando...
-      </div>
-    )
-  }
-
-
+  
   return (
     <div className="container">
       <div className="row justify-content-center align-items-center">
@@ -32,15 +10,13 @@ const Servicios = () => {
         <div className="col-md-7">
           <h1>Servicios: </h1>
           <ul className="listaEquipo">
-            {services.map(({_id, name, urlImage, price, description }) => (
-              <li key={_id}>
+              <li>
                 <div className="boxList">
                   <i>
-                    <img src={urlImage} alt="" className="img-fluid" width={40} /> {name}
+                    <img src="" alt="" className="img-fluid" width={40} />  hdghdgf
                   </i>
                 </div>
-              </li>
-            ))} 
+                </li>
           </ul> 
         </div>
 

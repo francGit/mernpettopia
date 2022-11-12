@@ -1,22 +1,40 @@
 // import React, { useState } from 'react'
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import {createUser} from "../api/userApi";
 const Registro = () => {
+
   const [inputs, setInputs] = useState({
-    firstName: "",
-    lastName: "",
-    identification: "",
-    password: "",
-    phone: "",
-    email: "",
-    address: "",
-    country: "",
-    city: ""
+    firstName: '',
+    lastName: '',
+    identification: '',
+    password: '',
+    phone: '',
+    email: '',
+    address: '',
+    country: '',
+    city: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("controlado");
+    const result = await createUser(inputs); 
+    alert(result.message)
+    console.log(result);
+    
+    // setInputs({
+    //   firstName: '',
+    //   lastName: '',
+    //   identification: '',
+    //   password: '',
+    //   phone: '',
+    //   email: '',
+    //   address: '',
+    //   country: '',
+    //   city: ''
+    // })
+    
+
     console.log(inputs);
   };
 

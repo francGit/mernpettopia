@@ -1,4 +1,3 @@
-//import { useState } from "react"
 import Home from './screen/Home'
 import {BrowserRouter, Routes, Route} from "react-router-dom" 
 import Login from './screen/Login'
@@ -16,8 +15,7 @@ import Navbar from './components/Navbar'
 import { useState } from 'react'
 import Contacto from './screen/Contacto'
 import RegistroPet from './screen/RegistroPet'
-import Not404 from './components/Not404'
-import Services from './API/models/Services'
+import Not404 from './components/Not404' 
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -45,7 +43,7 @@ const App = () => {
             <Route path="/usuarios" element={<Users />} />
             <Route path="/mascotas" element={<Mascotas />} />
             <Route path="/regmascota" element={<RegistroPet />} />
-            <Route path="/servicios" element={<Services />} />
+            <Route path="/servicios" element={<Servicios />} />
             
         </Route> 
          <Route path="/admin" element={<Admin />} />

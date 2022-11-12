@@ -1,26 +1,5 @@
-import React, { useEffect, useState } from "react";
+ const Users = () => {
 
-const Users = () => {
-
-  let url = "http://localhost:3400/customers";
-
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    const fetchApi = async () => {
-      const response = await fetch(url);
-      const result = await response.json();
-      setUsers(result);
-    };
-    fetchApi();
-  }, [url]);
-///proloader antes de cargar
-  if(users.length === 0){
-    return (
-      <div className="alert alert-warning text-center">
-         Cargando... 
-      </div>
-    )
-  }
 
   return (
     <>
@@ -51,13 +30,13 @@ const Users = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {users.map((user) => (
-                          <tr key={user._id}>
+                        
+                          <tr  >
                             <th>893776353</th>
-                            <td>{user.name}</td>
-                            <td>{user.lastname}</td>
-                            <td>{user.email}</td>
-                            <td>{user.phone}</td>
+                            <td>name</td>
+                            <td>lastname</td>
+                            <td>email</td>
+                            <td>phone</td>
                             <td>Rufus</td>
                             <td>
                               <div className="actionsIcons">
@@ -67,7 +46,7 @@ const Users = () => {
                               </div>
                             </td>
                           </tr>
-                        ))}
+                     
                       </tbody>
                     </table>
                   </div>
