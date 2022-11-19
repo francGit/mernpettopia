@@ -1,43 +1,44 @@
 // import React, { useState } from 'react'
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import {createUser} from "../api/userApi";
+import { Link } from "react-router-dom"; 
+import { userSingUp } from "../api/userApi";
+import Swal from 'sweetalert2' 
 const Registro = () => {
 
   const [inputs, setInputs] = useState({
-    firstName: '',
-    lastName: '',
-    identification: '',
-    password: '',
-    phone: '',
+    firstname: '',
+    lastname: '',
     email: '',
+    password: '',
+    dni: '',
+    phone: '',
     address: '',
     country: '',
     city: ''
   });
-
-  const handleSubmit = async (e) => {
+  const {firstname, lastname,email,password,dni,phone,address,country,city} = inputs;
+  
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const result = await createUser(inputs); 
-    alert(result.message)
-    console.log(result);
+    if(!firstname || !lastname || !email || !password || !dni || !phone || !address || !country || !city ){
+      Swal.fire('Todos los campos son requeridos') 
+    }else{
+        userSingUp(inputs); 
+          setInputs({
+            firstname: '',
+            lastname: '',
+            email: '',
+            password: '',
+            dni: '',
+            phone: '',
+            address: '',
+            country: '',
+            city: ''
+        })
+    }
     
-    // setInputs({
-    //   firstName: '',
-    //   lastName: '',
-    //   identification: '',
-    //   password: '',
-    //   phone: '',
-    //   email: '',
-    //   address: '',
-    //   country: '',
-    //   city: ''
-    // })
-    
-
-    console.log(inputs);
   };
-
+  
   const handleInputs = (e) => {
     e.preventDefault();
     const { target } = e;
@@ -47,6 +48,7 @@ const Registro = () => {
     });
     console.log(target.value);
   };
+
 
   return (
     <>
@@ -74,10 +76,10 @@ const Registro = () => {
                           type="text"
                           onChange={handleInputs}
                           className="form-control"
-                          id="firstName"
-                          name="firstName"
+                          id="firstname"
+                          name="firstname"
                           placeholder="Primer nombre"
-                          value={inputs.firstName}
+                          value={inputs.firstname}
                         />
                       </div>
                     </div>
@@ -87,10 +89,10 @@ const Registro = () => {
                           type="text"
                           onChange={handleInputs}
                           className="form-control"
-                          id="lastName"
-                          name="lastName"
+                          id="lastname"
+                          name="lastname"
                           placeholder="Primer apellido"
-                          value={inputs.lastName}
+                          value={inputs.lastname}
                         />
                       </div>
                     </div>
@@ -113,10 +115,10 @@ const Registro = () => {
                           type="text"
                           onChange={handleInputs}
                           className="form-control"
-                          id="cc"
-                          name="identification"
-                          placeholder="Cédula del dueño"
-                          value={inputs.identification}
+                          id="dni"
+                          name="dni"
+                          placeholder="Cédula"
+                          value={inputs.dni}
                         />
                       </div>
                     </div>
@@ -126,7 +128,7 @@ const Registro = () => {
                           type="text"
                           onChange={handleInputs}
                           className="form-control"
-                          id="tel"
+                          id="phone"
                           name="phone"
                           placeholder="Teléfono"
                           value={inputs.phone}
@@ -152,7 +154,7 @@ const Registro = () => {
                           type="text"
                           onChange={handleInputs}
                           className="form-control"
-                          id="dir"
+                          id="address"
                           placeholder="Dirección"
                           name="address"
                           value={inputs.address}
@@ -165,7 +167,7 @@ const Registro = () => {
                           type="text"
                           onChange={handleInputs}
                           className="form-control"
-                          id="pais"
+                          id="country"
                           placeholder="País"
                           name="country"
                           value={inputs.country}
@@ -178,7 +180,7 @@ const Registro = () => {
                           type="text"
                           onChange={handleInputs}
                           className="form-control"
-                          id="cuidad"
+                          id="city"
                           placeholder="Ciudad"
                           name="city"
                           value={inputs.city}
@@ -194,8 +196,7 @@ const Registro = () => {
                     <button
                       type="submit"
                       className="btn btn-primary mb-3 mx-auto d-block pt-3 pb-3"
-                      id="registro"
-                      onClick={handleSubmit}
+                      id="registro" 
                     >
                       Registrar usuario
                     </button>
