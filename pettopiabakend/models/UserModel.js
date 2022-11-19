@@ -1,18 +1,26 @@
+//para crear un modelo, necesitas una const tipo mongoose
 const mongoose = require('mongoose')
+const { Schema } = mongoose
 
-let UserSchema = new mongoose.Schema({
-    firstName: String,
-    lastName: String,
-    identification: Number,
-    password:String,
-    phone:Number,
-    email:String,
-    address:String,
-    country:String,
-    city:String,
-    rol: {type:Number, default:2},
-    creationDate: {type:Date, default: Date.now}
-});
+//definicion del modelo
+let UserSchema = new Schema( {
+    firstname: String,
+    lastname: String,
+    email: String,
+    password: String,  
+    phone:String,
+    dni:String,
+    address: String,
+    country: String,
+    city: String,
+    rol: { 
+        type: Number, 
+        default: 2 
+    },
+    creationDate: { 
+        type: Date, 
+        default: Date.now 
+    },
+} )
 
-
-module.exports = mongoose.model('user', UserSchema, 'users')
+module.exports = mongoose.model('User', UserSchema,'Users')
