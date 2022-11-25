@@ -1,6 +1,49 @@
 import React from 'react'
+import { useState } from 'react'
 import {Link} from 'react-router-dom'
+import Swal from 'sweetalert2';
+import { login } from '../api/userApi';
 const Login = () => {
+
+const [inputs, setInputs] = useState({
+    email: '',
+    password: '',
+});
+
+const handleInputs = ({target}) => {
+    setInputs({
+        ...inputs, 
+        [target.name]: target.value
+    });
+}
+
+const handleLogin = async (e) =>{
+    e.preventDefault()
+    if(!inputs.email || !inputs.password){
+      Swal.fire(
+        'Error!',
+        'All inputs are required',
+        'error'
+      )
+    } else {
+      const result = await login( inputs )
+      if(result.message) {
+        Swal.fire('Error', result.message , 'error')
+      } else {
+        //obtenemos el token y lo agregamos a una variable de almacenamiento local
+        localStorage.setItem('accessToken', result.accessToken)
+        Swal.fire('Success', 'Bienvenido' , 'success')
+       
+        //regresamos al usuario a la pagina index despues de 3 segundos
+        setTimeout(() => {
+          window.location.href = '/dashboard'
+        }, 1800);
+
+      }
+    }
+  }
+
+
   return (
    <>
     <section className="boxLogin">
@@ -18,19 +61,22 @@ const Login = () => {
             <div className="boxForm">
                 <h2 className="SubTitle">Iniciar sesión</h2>
 
-                <div className="mb-3">
+             <form onSubmit={handleLogin}>
+             <div className="mb-3">
                     
-                    <input type="email" className="form-control" id="user1" placeholder="usuario" />
+                    <input type="email" onChange={handleInputs} className="form-control" id="email" placeholder="usuario" name="email" value={inputs.email} />
                   </div>
 
                   <div className="mb-3">
                     
-                    <input type="email" className="form-control" id="pass" placeholder="contraseña" />
+                    <input type="password" onChange={handleInputs} className="form-control" id="password" placeholder="contraseña" name="password" value={inputs.password} />
                   </div>
 
                   <div className="col-md-4 mx-auto mt-5 mb-5">
-                    <div id="login"  className="btn btn-primary mb-3 mx-auto d-block">Ingresar</div>
+                    <button id="login"  className="btn btn-primary mb-3 mx-auto d-block">Ingresar</button> 
                   </div>
+
+             </form>
 
                   
             </div>

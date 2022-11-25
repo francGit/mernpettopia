@@ -133,8 +133,7 @@ const Registro = () => {
                     <button
                       type="submit"
                       className="btn btn-primary mb-3 mx-auto d-block pt-3 pb-3"
-                      id="registro"
-                      onClick={handleSubmit}
+                      id="registro" 
                     >
                       Registrar datos
                     </button>

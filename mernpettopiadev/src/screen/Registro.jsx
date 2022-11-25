@@ -21,7 +21,7 @@ const Registro = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!firstname || !lastname || !email || !password || !dni || !phone || !address || !country || !city ){
-      Swal.fire('Todos los campos son requeridos') 
+      Swal.fire('Error','Todos los campos son requeridos','error') 
     }else{
         userSingUp(inputs); 
           setInputs({
@@ -46,7 +46,7 @@ const Registro = () => {
       ...inputs,
       [target.name]: target.value,
     });
-    console.log(target.value);
+    // console.log(target.value);
   };
 
 

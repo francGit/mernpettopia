@@ -5,7 +5,7 @@ const NavBar = () => {
   //Creacion del array que contiene los datos de los navItems
   const navItemsLeft = [
     { ruta: "/", icono: "bi bi-house", texto: "Home" },  
-    { ruta: "/dashboard", icono: "bi bi-house", texto: "Dashboard" },  
+    { ruta: "/dashboard", icono: "bi bi-kanban", texto: "Dashboard" },  
     { ruta: "/agendar", icono: "bi bi-calendar2-check", texto: " Agendar" },  
     { ruta: "/mascotas", icono: "bi bi-balloon-heart", texto: "Mascotas" },  
     { ruta: "/usuarios", icono: "bi bi-bookmark-star", texto: "Usuarios" },  

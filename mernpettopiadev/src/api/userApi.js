@@ -24,10 +24,27 @@ export const userSingUp = (dataUser) => {
               // console.log(result);
             }else{
               // console.log(result.message);
-              
               Swal.fire(`${result.message}`);
             }
           })
           .catch(err => console.log(err.message));
 
 }
+
+
+////api loguin
+export const login = (dataUser) => {
+  const url = `${base_url}/${api_version}/log-in`;
+  const requestInit = {
+    method: "POST",
+    body: JSON.stringify(dataUser),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  return fetch(url, requestInit)
+  .then(res => res.json())
+  .then( result => result ) //este result es el que va hacia el login
+  .catch( err => console.log (err))
+};
