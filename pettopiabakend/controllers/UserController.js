@@ -170,7 +170,7 @@ const userLogin = ( req, res ) => {
         } else {
           //creamos el token del usuario
           const token = jwt.createAccessToken(userFinded)
-          res.send( { accessToken: token } )
+          res.send( { token } )
         }
       })
 
