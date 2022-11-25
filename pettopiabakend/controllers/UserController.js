@@ -1,5 +1,6 @@
 const User = require("../models/UserModel");
 const bcrypt = require("bcrypt");
+const jwt = require('../services/TokenGenerator'); 
 const saltRounds = 10;
 const salt = "MisionTic2022";
 
@@ -114,7 +115,7 @@ const editUser = (req, res) => {
     }
   });
 };
-
+ 
 //EndPoint para eliminar usuario
 const deleteUser = (req, res) => {
   const idToDelete = req.params.id;
@@ -131,38 +132,55 @@ const deleteUser = (req, res) => {
 
 //EndPoint para obtener todos los usuarios
 const getAllUsers = (req, res) => {
-  User.find({}, function (err, userDocs) {
+  User.find({}, (err, docs) => {
     if (err) {
-      res.status(500).send({ message: "Error del servidor: " + err });
-    } else if (!userDocs) {
-      res.status(404).send({ message: "Colección sin documentos" });
-    } else {
-      res.status(200).send({ users: userDocs });
-    }
-  });
-};
-
-const userLogin = (req, res) => {
-  res.send("User Login On");
-};
-
-/////funcion q mejora el proceso de actualizacion de usuario
-
-function userIsUpdate(id,update,res){
-  User.findByIdAndUpdate(idToUpdate, userToUpdate, (err, userUpdated) => {
-    if (userUpdated) {
-      res.send({ message: "Usuario actualizado satisfactoriamente" });
-    } else if (!userUpdated) {
-      res.send({ message: "Usuario no existe" });
-    } else {
       res.status(500).send({ message: `Error del servidor: ${err}` });
+    } else if (!res) {
+      res.send({ message: "Error de la BD" });
+    } else {
+      res.send({ docs });
     }
   });
+};
+
+
+
+
+//ToDo:...Falta funcion para loguear usuario
+const userLogin = ( req, res ) => {
+  //instrucciones para loguear usuario
+  const { body } = req
+  const { email , password } = body
+
+  //verificamos si el usuario existe o no
+  User.findOne( { email: email.toLowerCase() }, (err, userFinded) => {
+    if(err){
+      res.send( { message: 'Error del servidor: ' + err } )
+    }else if(!userFinded){
+      res.send( { message: 'Usuario o Password invalido' } )
+    }else {
+      //si el usuario fue encontrado verificamos que los password coincidan con la funcion compare de bcrypt
+      const passwordToCompare = password + salt //agregamos el valor de salt al password que viene en el body
+
+      bcrypt.compare( passwordToCompare , userFinded.password, (err, result) =>{
+        if(err){
+          res.send( { message: 'Error del servidor'})
+        } else if(!result) {
+          res.send ( { message: 'Usuario o Password invalido 2' } )
+        } else {
+          //creamos el token del usuario
+          const token = jwt.createAccessToken(userFinded)
+          res.send( { accessToken: token } )
+        }
+      })
+
+    }
+  } )
 }
 
 module.exports = {
   createUser,
-  editUser,
+  editUser, 
   deleteUser,
   getAllUsers,
   userLogin,

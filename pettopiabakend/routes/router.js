@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 
 //Operaciones CRUD Usuario
 router.post("/createUser", createUser );
-router.get("/getAllUsers", getAllUsers);
+router.get("/getAllUsers", getAllUsers); 
 router.put("/update-user/:id", editUser);
 router.delete("/delete-user/:id", deleteUser);
 
