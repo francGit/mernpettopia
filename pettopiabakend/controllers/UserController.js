@@ -20,18 +20,7 @@ const createUser = (req, res) => {
     city: body.city,
   });
 
-  // opcion 1 con el async y await, no olvidar colocar async en la funcion
-  // const result = await newUser.save();
-  // console.log ( result )
-
-  // opcion 2 guardando un usuario con el formato tipo promise
-  // newUser.save()
-  // .then( () => res.send( { message: 'Usuario guardado con éxito' } ) )
-  // .catch( (err) => res.send( { message: err } ) )
-
-  // opcion 3 guardando un usuario con el formato undefined
-  // newUser.save();
-
+ 
   // opcion 4
   User.findOne({ email: newUser.email }, (err, userFinded) => {
     if (userFinded) {
@@ -144,6 +133,18 @@ const getAllUsers = (req, res) => {
 };
 
 
+const getUser = (req, res) => {
+  User.findById((req.params.id), (err, pets) => {
+    if (err) {
+      res.status(500).send({ message: `Error del servidor: ${err}` });
+    } else if (!res) {
+      res.send({ message: "Error de la BD" });
+    } else {
+      res.send({ users });
+    }
+  });
+};
+
 
 
 //ToDo:...Falta funcion para loguear usuario
@@ -183,5 +184,6 @@ module.exports = {
   editUser, 
   deleteUser,
   getAllUsers,
+  getUser,
   userLogin,
 };

@@ -6,7 +6,7 @@ import '../screen/DashBoard.css'
 const DashBoard = () => {
   return (
     <>
-      <section className="boxLogin Dashboard">
+      <section className="boxLogin Dashboard pb-5">
       <div className="container p-0">
         <div className="row m-0">
           <div className="row">

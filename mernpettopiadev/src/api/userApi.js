@@ -48,3 +48,27 @@ export const userSignIn = (dataUser) => {
   .then( result => result )
   .catch(err => console.log(err)) //este result es el que va hacia  
 };
+
+///leer usuarios
+export const getUser = () =>{
+  const url = `${base_url}/${api_version}/getAllUsers`;
+  const params = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  return fetch(url,params)
+    .then((res) => res.json())
+    .then((result) => {
+      if(result) {
+        const {users} = result
+        return users;
+      }else{
+        return result.message;
+      }
+    })
+    .catch((err) => "Error de servidor: " + err.message);
+
+}

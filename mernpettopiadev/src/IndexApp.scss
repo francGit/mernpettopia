@@ -40,8 +40,7 @@
   }
 .barra{
   & .navbar-nav{
-    justify-content: center;
-    opacity: 0;
+    justify-content: center; 
   }
 
   .nav-link{
@@ -51,6 +50,7 @@
   }
   .nav-link i{
     color: #1947ba;
+    margin-right: 5px; 
   }
   .nav-link.active{
     background-color: #FC637D;
@@ -66,6 +66,10 @@
   .nav-link:active{
     background-color: #FC637D;
     color:#fff !important;
+  }
+
+  .texto-nav{
+    margin-left: 5px;
   }
 
 }

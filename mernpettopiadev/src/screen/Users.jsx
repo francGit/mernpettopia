@@ -1,8 +1,8 @@
- const Users = () => {
-
-
+ import React from "react";
+const Users = () => {
+ 
   return (
-    <>
+    
       <section className="boxLogin Dashboard">
         <div className="container p-0">
           <div className="row m-0">
@@ -30,7 +30,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        
+
                           <tr  >
                             <th>893776353</th>
                             <td>name</td>
@@ -56,7 +56,7 @@
           </div>
         </div>
       </section>
-    </>
+ 
   );
 };
 
