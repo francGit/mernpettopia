@@ -166,11 +166,11 @@ const userLogin = ( req, res ) => {
         if(err){
           res.send( { message: 'Error del servidor'})
         } else if(!result) {
-          res.send ( { message: 'Usuario o Password invalido 2' } )
+          res.send ( { message: 'Usuario o Password invalido' } )
         } else {
           //creamos el token del usuario
           const token = jwt.createAccessToken(userFinded)
-          res.send( { token } )
+          res.send( { accessToken: token } )
         }
       })
 

@@ -1,7 +1,15 @@
 
+import { useContext } from "react";
+import { AuthContext } from "../../context/UserContext";
 import NavItems from "./NavItems";
 
 const NavBar = () => {
+
+  const context = useContext(AuthContext);
+  const {user, isLoading} = context
+
+  console.log(context)
+
   //Creacion del array que contiene los datos de los navItems
   const navItemsLeft = [
     { ruta: "/", icono: "bi bi-house", texto: "Home" },  

@@ -33,8 +33,8 @@ export const userSingUp = (dataUser) => {
 
 
 ////api loguin
-export const login = (dataUser) => {
-  const url = `${base_url}/${api_version}/log-in`;
+export const userSignIn = (dataUser) => {
+  const url = `${base_url}/${api_version}/login`;
   const requestInit = {
     method: "POST",
     body: JSON.stringify(dataUser),
@@ -45,6 +45,6 @@ export const login = (dataUser) => {
 
   return fetch(url, requestInit)
   .then(res => res.json())
-  .then( result => result ) //este result es el que va hacia el login
-  .catch( err => console.log (err))
+  .then( result => result )
+  .catch(err => console.log(err)) //este result es el que va hacia  
 };

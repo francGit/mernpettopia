@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
 import Swal from 'sweetalert2';
-import { login } from '../api/userApi';
+import { userSignIn } from '../api/userApi';
 const Login = () => {
 
 const [inputs, setInputs] = useState({
@@ -22,24 +22,25 @@ const handleLogin = async (e) =>{
     if(!inputs.email || !inputs.password){
       Swal.fire(
         'Error!',
-        'All inputs are required',
+        'Todos los campos son requeridos',
         'error'
       )
     } else {
-      const result = await login( inputs )
-      if(result.message) {
-        Swal.fire('Error', result.message , 'error')
-      } else {
-        //obtenemos el token y lo agregamos a una variable de almacenamiento local
-        localStorage.setItem('accessToken', result.accessToken)
-        Swal.fire('Success', 'Bienvenido' , 'success')
-       
-        //regresamos al usuario a la pagina index despues de 3 segundos
-        setTimeout(() => {
-          window.location.href = '/dashboard'
-        }, 1800);
+      const result = await userSignIn(inputs);
+      console.log(result)
+      // Swal.fire('!Bienvenido!',`Sr(a). ${inputs.email} `,'success');
+       if(result.message){
+         Swal.fire('Error', result.message,'error');
+        }else{
+          ///obtenemos el token y lo agregamos a una variable de almacenamiento local
+         localStorage.setItem('accesToken',result.accessToken) 
+         Swal.fire('Datos correctos', 'Bienvenid@','success')
+          setTimeout(()=>{
+            window.location.href = '/dashboard'
+          }, 1200);
 
-      }
+       }
+     
     }
   }
 
