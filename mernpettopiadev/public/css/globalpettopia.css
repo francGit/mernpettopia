@@ -417,7 +417,8 @@ section .leadText {
 }
 .boxProfile .boxImgProfile img {
   display: block;
-  width: 100%;
+  width: 100px;
+  height: 100px;
   border-radius: 100%;
   -o-object-fit: fill;
      object-fit: fill;

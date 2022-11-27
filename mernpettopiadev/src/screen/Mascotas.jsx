@@ -1,6 +1,23 @@
-import React from 'react' 
+import React, { useState, useEffect } from "react";
+import { base_url, api_version } from "../constants/uriBase";
+import ListPets from "../components/ListPets";
+
 
 const Mascotas = () => {
+
+  const [listpets, setListpets] = useState([]);
+  const url_api = `${base_url}/${api_version}/getAllPets`;
+  const fetchPets = (url) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setListpets(data.pets))
+      .catch((error) => console.log(error)); 
+  };
+
+  useEffect(() => {   
+    fetchPets(url_api);
+  }, [url_api]);
+
 
 
   return (
@@ -26,24 +43,7 @@ const Mascotas = () => {
                         </tr>
                       </thead>
                       <tbody>
-                      
-                          <tr >
-                            <th>
-                              <div style={{ backgroundImage: `url()` }} className="avatarBoxPet" />
-                            </th>
-                            <td></td>
-                            <td></td>
-                            <td></td> 
-                            <td></td> 
-                            <td>
-                              <div className="actionsIcons">
-                              <i className="bi bi-trash"></i>
-                              <i className="bi bi-pencil-square"></i>
-                              <i className="bi bi-eye"></i>
-                              </div>
-                            </td>
-                          </tr>
-                        
+                          <ListPets petslist={listpets} />
                       </tbody>
                     </table>
                   </div>

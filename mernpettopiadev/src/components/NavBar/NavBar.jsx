@@ -32,7 +32,7 @@ const NavBar = () => {
 
   const navItemsRight = [
     !isLoading && {ruta: "/register", icono: "bi bi-person-lines-fill", texto: "Registro"},
-    !isLoading && {ruta: "/login", icono: "bi bi-fingerprint", texto: "Login"},
+    !isLoading && {ruta: "/login", icono: "bi bi-fingerprint", texto: "Login"}, 
   ]
 
   return (

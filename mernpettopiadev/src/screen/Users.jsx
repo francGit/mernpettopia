@@ -1,62 +1,58 @@
- import React from "react";
-const Users = () => {
- 
-  return (
-    
-      <section className="boxLogin Dashboard">
-        <div className="container p-0">
-          <div className="row m-0">
-            <div className="row">
-              <div className="col-md-12 pt-4">
-                <div className="boxHistorialServicios p-4">
-                  <p className="titleHistorial">
-                    <i> 
-                      <img src="./image/userDash.svg" width="60" alt="" />{" "}
-                    </i> 
-                    Listado de <b>Usuarios</b>
-                  </p>
-                  <hr />
-                  <div className="listadoHistorial resetHv">
-                    <table className="table">
-                      <thead>
-                        <tr>
-                          <th>#C.c</th>
-                          <th>Name</th>
-                          <th>LastName</th>
-                          <th>Email</th>
-                          <th>Phone</th>
-                          <th>Pet</th>
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
+import React, { useState, useEffect } from "react";
+import { base_url, api_version } from "../constants/uriBase";
+import ListUsers from "../components/ListUsers";
 
-                          <tr  >
-                            <th>893776353</th>
-                            <td>name</td>
-                            <td>lastname</td>
-                            <td>email</td>
-                            <td>phone</td>
-                            <td>Rufus</td>
-                            <td>
-                              <div className="actionsIcons">
-                              <i className="bi bi-trash"></i>
-                              <i className="bi bi-pencil-square"></i>
-                              <i className="bi bi-eye"></i>
-                              </div>
-                            </td>
-                          </tr>
-                     
-                      </tbody>
-                    </table>
-                  </div>
+const Users = () => {
+  const [listusers, setListusers] = useState([]);
+  const url_api = `${base_url}/${api_version}/getAllUsers`;
+  const fetcUsers = (url) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setListusers(data.docs))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fetcUsers(url_api);
+  }, [url_api]);
+
+  return (
+    <section className="boxLogin Dashboard">
+      <div className="container p-0">
+        <div className="row m-0">
+          <div className="row">
+            <div className="col-md-12 pt-4">
+              <div className="boxHistorialServicios p-4">
+                <p className="titleHistorial">
+                  <i>
+                    <img src="./image/userDash.svg" width="60" alt="" />{" "}
+                  </i>
+                  Listado de <b>Usuarios</b>
+                </p>
+                <hr />
+                <div className="listadoHistorial resetHv">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th>#C.c</th>
+                        <th>Name</th>
+                        <th>LastName</th>
+                        <th>Email</th>
+                        <th>Phone</th> 
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <ListUsers characters={listusers}/>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
- 
+      </div>
+    </section>
   );
 };
 

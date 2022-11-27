@@ -50,25 +50,25 @@ export const userSignIn = (dataUser) => {
 };
 
 ///leer usuarios
-export const getUser = () =>{
-  const url = `${base_url}/${api_version}/getAllUsers`;
-  const params = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
+// export const getUser = () =>{
+//   const url = `${base_url}/${api_version}/getAllUsers`;
+//   const params = {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   };
 
-  return fetch(url,params)
-    .then((res) => res.json())
-    .then((result) => {
-      if(result) {
-        const {users} = result
-        return users;
-      }else{
-        return result.message;
-      }
-    })
-    .catch((err) => "Error de servidor: " + err.message);
+//   return fetch(url,params)
+//     .then((res) => res.json())
+//     .then((result) => {
+//       if(result) {
+//         const {users} = result
+//         return users;
+//       }else{
+//         return result.message;
+//       }
+//     })
+//     .catch((err) => "Error de servidor: " + err.message);
 
-}
+// }
