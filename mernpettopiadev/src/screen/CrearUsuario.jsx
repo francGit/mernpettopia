@@ -1,41 +1,44 @@
 // import React, { useState } from 'react'
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { petNew } from "../api/petApi";
+import { Link } from "react-router-dom"; 
+import { userSingUp } from "../api/userApi";
 import Swal from 'sweetalert2' 
-const Registro = () => {
-  const [inputs, setInputs] = useState({
-    nameanimal: "",
-    typeanimal: "",
-    racetype: "",
-    years: "",
-    file: "",
-    commit: "",
-  });
+const CrearUsuario = () => {
 
-  const {nameanimal, typeanimal,racetype,years,file,commit} = inputs;
+  const [inputs, setInputs] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: '',
+    dni: '',
+    phone: '',
+    address: '',
+    country: '',
+    city: ''
+  });
+  const {firstname, lastname,email,password,dni,phone,address,country,city} = inputs;
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if(!nameanimal || !typeanimal || !racetype || !years || !file || !commit ){
+    if(!firstname || !lastname || !email || !password || !dni || !phone || !address || !country || !city ){
       Swal.fire('Error','Todos los campos son requeridos','error') 
     }else{
-        petNew(inputs); 
+        userSingUp(inputs); 
           setInputs({
-            nameanimal: '',
-            typeanimal: '',
-            racetype: '',
-            years: '',
-            file: '', 
+            firstname: '',
+            lastname: '',
+            email: '',
+            password: '',
+            dni: '',
+            phone: '',
+            address: '',
+            country: '',
+            city: ''
         })
-        setTimeout(()=>{
-          window.location.href = '/mascotas'
-        }, 1200);
     }
-
-
+    
   };
-
+  
   const handleInputs = (e) => {
     e.preventDefault();
     const { target } = e;
@@ -43,8 +46,9 @@ const Registro = () => {
       ...inputs,
       [target.name]: target.value,
     });
-    console.log(target.value);
+    // console.log(target.value);
   };
+
 
   return (
     <>
@@ -53,7 +57,7 @@ const Registro = () => {
           <div className="row m-0">
             <div className="col-md-3 h60 justify-content-center d-flex align-items-center leftBox regLeft">
               <figure>
-                <img src="image/pairPet.svg" alt="" className="img-fluid" style={{width:'100vh'}} />
+                <img src="image/userDash.svg" alt="" className="img-fluid w-100"  />
               </figure>
               <div className="hoja1"></div>
               <div className="hoja2"></div>
@@ -61,47 +65,21 @@ const Registro = () => {
             </div>
             <div className="col-md-9 p-0 justify-content-between flex-column d-flex align-items-center">
               <div className="boxForm">
+                <h2 className="SubTitle">Registrar usuario</h2>
+
                 <form action="" onSubmit={handleSubmit}>
-                  <h2 className="SubTitle mb-5">Registrar mascota</h2>
-                  <div className="container">
-                  <div className="row px-5">
+                 <div className="container">
+                 <div className="row px-5">
                     <div className="col-md-6">
                       <div className="mb-3">
                         <input
                           type="text"
                           onChange={handleInputs}
                           className="form-control"
-                          id="namedog"
-                          name="nameanimal"
-                          placeholder="Nombre del peludo"
-                          value={inputs.nameanimal}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="mb-3">
-                        <select
-                          className="form-select"
-                          name="typeanimal"
-                          onChange={handleInputs}
-                          value={inputs.typeanimal}
-                        >
-                          <option value="noselected">Mi peludo es</option>
-                          <option value="perro">Perro</option>
-                          <option value="gato">Gato</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="mb-3">
-                        <input
-                          type="text"
-                          onChange={handleInputs}
-                          className="form-control"
-                          id="raza"
-                          placeholder="Raza"
-                          name="racetype"
-                          value={inputs.racetype}
+                          id="firstname"
+                          name="firstname"
+                          placeholder="Primer nombre"
+                          value={inputs.firstname}
                         />
                       </div>
                     </div>
@@ -111,51 +89,116 @@ const Registro = () => {
                           type="text"
                           onChange={handleInputs}
                           className="form-control"
-                          id="years"
-                          placeholder="¿Cuantos años tiene el peludo?"
-                          name="years"
-                          value={inputs.years}
+                          id="lastname"
+                          name="lastname"
+                          placeholder="Primer apellido"
+                          value={inputs.lastname}
                         />
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <div className="mb-3 text-center">
-                        <input
-                          onChange={handleInputs}
-                          className="form-control"
-                          type="text"
-                          id="formFile"
-                          placeholder="Pega la url de la foto"
-                          name="file"
-                          value={inputs.file}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-
                       <div className="mb-3">
-                        <textarea
+                        <input
+                          type="password"
                           onChange={handleInputs}
                           className="form-control"
-                          id="textarea"
-                          rows="3"
-                          placeholder="Recomendaciones del dueño"
-                          name="commit"
-                          value={inputs.commit}
-                        ></textarea>
+                          id="password"
+                          name="password"
+                          placeholder="Password"
+                          value={inputs.password}
+                        />
                       </div>
-
+                    </div>
+                    <div className="col-md-6">
+                      <div className="mb-3">
+                        <input
+                          type="text"
+                          onChange={handleInputs}
+                          className="form-control"
+                          id="dni"
+                          name="dni"
+                          placeholder="Cédula"
+                          value={inputs.dni}
+                        />
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="mb-3">
+                        <input
+                          type="text"
+                          onChange={handleInputs}
+                          className="form-control"
+                          id="phone"
+                          name="phone"
+                          placeholder="Teléfono"
+                          value={inputs.phone}
+                        />
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="mb-3">
+                        <input
+                          type="email"
+                          onChange={handleInputs}
+                          className="form-control"
+                          id="email"
+                          placeholder="Email"
+                          name="email"
+                          value={inputs.email}
+                        />
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="mb-3">
+                        <input
+                          type="text"
+                          onChange={handleInputs}
+                          className="form-control"
+                          id="address"
+                          placeholder="Dirección"
+                          name="address"
+                          value={inputs.address}
+                        />
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="mb-3">
+                        <input
+                          type="text"
+                          onChange={handleInputs}
+                          className="form-control"
+                          id="country"
+                          placeholder="País"
+                          name="country"
+                          value={inputs.country}
+                        />
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="mb-3">
+                        <input
+                          type="text"
+                          onChange={handleInputs}
+                          className="form-control"
+                          id="city"
+                          placeholder="Ciudad"
+                          name="city"
+                          value={inputs.city}
+                        />
+                      </div>
                     </div>
                   </div>
- 
-                  </div>
+                 </div>
+
+                
+          
                   <div className="col-md-5 mx-auto mt-5 mb-5">
                     <button
                       type="submit"
                       className="btn btn-primary mb-3 mx-auto d-block pt-3 pb-3"
                       id="registro" 
                     >
-                      Registrar datos
+                      Registrar usuario
                     </button>
                   </div>
                 </form>
@@ -188,4 +231,4 @@ const Registro = () => {
   );
 };
 
-export default Registro;
+export default CrearUsuario;

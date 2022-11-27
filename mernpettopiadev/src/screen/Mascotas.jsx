@@ -30,22 +30,10 @@ const Mascotas = () => {
               <div className="boxHistorialServicios p-4">
                 <p className="titleHistorial"><i> <img src="./image/pairPet.svg" width="80" alt='Mascotas' /> </i> Listado de <b>Mascotas</b> </p> 
                 <hr />
-                <div className="listadoHistorial resetHv">
-                    <table className="table">
-                      <thead>
-                        <tr>
-                          <th>Photo</th>
-                          <th>NamePet</th>
-                          <th>Raza</th>
-                          <th>Type</th>
-                          <th>Years</th>
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                          <ListPets petslist={listpets} />
-                      </tbody>
-                    </table>
+                <div className="box">
+                   <div className="row">
+                   <ListPets petslist={listpets} />
+                   </div>
                   </div>
               </div>
              

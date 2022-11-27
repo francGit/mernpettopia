@@ -24,10 +24,11 @@ const NavBar = () => {
   const navItemsLeft = [
     { ruta: "/", icono: "bi bi-house", texto: "Home" },  
     isLoading && { ruta: "/dashboard", icono: "bi bi-kanban", texto: "Dashboard" },  
-    isLoading && { ruta: "/agendar", icono: "bi bi-calendar2-check", texto: " Agendar" },  
+    // isLoading && { ruta: "/agendar", icono: "bi bi-calendar2-check", texto: " Agendar" },  
     isLoading && { ruta: "/mascotas", icono: "bi bi-balloon-heart", texto: "Mascotas" },  
     isLoading && { ruta: "/usuarios", icono: "bi bi-bookmark-star", texto: "Usuarios" },  
     isLoading && { ruta: "/registropet", icono: "bi bi-clipboard2-heart", texto: "RegistroPet" },  
+    isLoading && { ruta: "/registrousuario", icono: "bi bi-clipboard2-heart", texto: "RegistroUsuario" },  
   ];
 
   const navItemsRight = [
@@ -44,7 +45,7 @@ const NavBar = () => {
                     <img src="image/logo.svg" alt="" className="img-fluid" />
                   </figure>
                 </div>
-          <ul className="navbar-nav texto-nav">
+          <ul className="navbar-nav texto-nav" style={{minWidth: '100%'}}>
             {/* usamos el metodo map en el array navItems para renderizar la barra de navegacion */}
             <NavItems items = { navItemsLeft } />
           </ul>

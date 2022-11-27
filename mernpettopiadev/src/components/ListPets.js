@@ -4,24 +4,42 @@ const ListPets = ({ petslist = [] }) => {
   return (
     <>
       {petslist.map((item, index) => (
-        <tr key={index}>
-          <td>
-            <figure>
-              <img src={item.file} alt="" className="avatar" />
-            </figure>
-          </td>
-          <td>{item.nameanimal}</td>
-          <td>{item.racetype}</td>
-          <td>{item.typeanimal}</td>
-          <td>{item.years}</td>
-          <td>
-            <div className="actionsIcons">
-              <i className="bi bi-trash"></i>
-              <i className="bi bi-pencil-square"></i>
-              <i className="bi bi-eye"></i>
+        <div key={index} className="col-md-6 pt-4">
+          <div className="boxProfile p-4">
+            <div className="row">
+              <div className="col-md-3">
+                <div className="boxImgProfile">
+                  <img src={item.file} alt="" className="avatar" />
+                </div>
+              </div>
+              <div className="col-md-9">
+                <div className="boxUserNameDash">
+                  <h2>{item.nameanimal}</h2>{" "}
+                  <i>
+                    <img src="image/Edit.svg" className="img-fluid" alt="" />
+                  </i>
+                </div>
+                <hr className="mt-3" />
+                <ul className="datPet pt-4">
+                  <li>
+                    Tengo: <b>{item.years} años</b>
+                  </li>
+                  <li>
+                    Tipo: <b>{item.typeanimal}</b>
+                  </li>
+                  <li>
+                    Soy de raza: <b>{item.racetype}</b>
+                  </li>
+                  <li>
+                    Vivo en: <b>Bogota - Colombia</b>
+                  </li>
+                </ul>
+
+                <hr className="mt-3" />
+              </div>
             </div>
-          </td>
-        </tr>
+          </div>
+        </div>
       ))}
     </>
   );
